@@ -1,4 +1,4 @@
-import Prueba from "./components/prubea";
+import Prueba from "./components/Prueba";
 
 function App() {
     return <Prueba/>
