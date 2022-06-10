@@ -3,7 +3,7 @@ import Mapa from "./Mapa";
 export default function Prueba(){
     return (
     <div className = "prueba">
-        <h1 onClick="{<Mapa/>}">Mapa</h1>
+        <h1 onClick="location.href = 'src\components\Mapa.js'">Mapa</h1>
         <Mapa/>
     </div>    
     );
