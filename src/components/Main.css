@@ -1,21 +1,4 @@
-.Text{
-    display: inline-block;
-    margin:50px;
-    color:#FF921C;
-}
-.Hola{
-    font-size: 65px;
-  }
-.IrMapa{
-   font-size: 20px;  
-} 
-.img {
-    background-color: #FF921C;
-    height:300px; width: 300px;
-    margin:50px;
-    float:right;
-}
-a {
+.Seccion {
     font-size: 20px;
     color: white;
     text-decoration: none;
@@ -24,5 +7,73 @@ a {
 .Navbar{
     padding: 15px;
     background-color: #3A5A40;
-    display: flex;  align-items: center;    justify-content: center;
+    display: flex;  align-items: center;  justify-content: center;
 }
+#Parte1{
+    display: flex;  align-items: center;  justify-content: center;
+    /* background-color: aqua; */
+}
+.Text{
+    display: inline-block;
+    margin:50px;
+}
+.Hola{
+    font-size: 65px;
+}
+.IrMapa{
+   font-size: 20px;  
+}
+.img {
+    background-color: #FF921C;
+    height:300px; width: 300px;
+    margin:50px;
+    float:right;
+}
+#Parte2{
+    /* background-color:darkseagreen; */
+    align-items: center;  justify-content: center;
+    padding:100px;
+    display: grid;
+    align-items: center;  justify-content: center;
+    grid-template-columns: 50% 50%;
+}
+.Grid2{
+    /* background-color:hotpink; */
+    display: grid;
+    display:flex;
+    align-items: center;  justify-content: center;
+    grid-template-columns: 25% 25% 25% 25%;
+    padding:100px;
+    grid-gap: 150px;
+}
+.Grid1{
+    /* background-color: coral; */
+    display: grid;
+    align-items: center;  justify-content: center;
+    grid-template-columns: 50% 50%;
+    padding:100px;
+    grid-gap: 50px;
+}
+.Conocenosimg{
+    background-color: #FF921C;
+    height:300px; width: 500px;
+}
+.Info{
+    display: inline-flex; align-items: center;
+}
+.Conocenos{
+    /* background-color:hotpink; */
+    display: flex; align-items: center;  justify-content: center;
+    text-decoration: underline;
+}
+
+.Inicio{
+    background-color: #FAF8D4;
+}
+.Nombre{
+    display: flex; align-items: center;  justify-content: center;
+    background-color: #FF921C;
+    height: 200px; width: 200px;
+    border-radius: 50%;
+}
+
