@@ -1,0 +1,28 @@
+.Text{
+    display: inline-block;
+    margin:50px;
+    color:#FF921C;
+}
+.Hola{
+    font-size: 65px;
+  }
+.IrMapa{
+   font-size: 20px;  
+} 
+.img {
+    background-color: #FF921C;
+    height:300px; width: 300px;
+    margin:50px;
+    float:right;
+}
+a {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    margin-right: 10rem;
+}
+.Navbar{
+    padding: 15px;
+    background-color: #3A5A40;
+    display: flex;  align-items: center;    justify-content: center;
+}

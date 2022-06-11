@@ -1,10 +1,10 @@
-import Navbar from "./components/Navbar";
+import Main from "./components/Main";
 /* import Prueba from "./components/Prueba";
  */
 function App() {    
     return(
         <>            
-            <Navbar/>
+            <Main/>
             {/* <Prueba/> */}
         </>
     );
