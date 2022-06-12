@@ -21,7 +21,8 @@
     font-size: 65px;
 }
 .IrMapa{
-   font-size: 20px;  
+   font-size: 20px;
+   background-color: #FF921C;
 }
 .img {
     background-color: #FF921C;
@@ -40,8 +41,7 @@
 .Grid2{
     /* background-color:hotpink; */
     display: grid;
-    display:flex;
-    align-items: center;  justify-content: center;
+    display:flex; align-items: center;  justify-content: center;
     grid-template-columns: 25% 25% 25% 25%;
     padding:100px;
     grid-gap: 150px;
@@ -61,7 +61,7 @@
 .Info{
     display: inline-flex; align-items: center;
 }
-.Conocenos{
+.titulo{
     /* background-color:hotpink; */
     display: flex; align-items: center;  justify-content: center;
     text-decoration: underline;
@@ -76,4 +76,15 @@
     height: 200px; width: 200px;
     border-radius: 50%;
 }
-
+.footer{
+    padding: 15px;
+    background-color: #3A5A40;
+    display: flex;  align-items: center;  justify-content: center;
+    color: white;
+}
+.mapaimg{
+    background-color: #FF921C;
+    height:300px; width: 300px;
+    margin:50px;
+    display: flex; align-items: center;  justify-content: center;
+}
