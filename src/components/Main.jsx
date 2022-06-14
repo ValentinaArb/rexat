@@ -1,32 +1,27 @@
 import React from 'react'
-/* import styled from 'styled-components' */
 import "./Main.css"
-
+import basura from "../img/basura.png"
 function Main() {
   return (
     <>
-{/*        <NavContainer> */}
            <div className="Navbar">
             <a className = "Seccion" href="#Parte1">Rexat</a>
             <a className = "Seccion" href="#Parte2">Concientizate</a>
             <a className = "Seccion" href="#Parte3">Conocenos</a>
             <a className = "Seccion" href="#Parte4">Mapa</a>
            </div>
-{/*    </NavContainer> */}
-{/*   <WelcomeContainer> */}
 <div className='Inicio'>
   <div id= "Parte1">
       <div className="Text">
         <div className = "Hola"> <b>Hola, <br></br> Somos Rexat</b></div> <br></br>
           <button className="IrMapa">Ir al mapa</button>
-        </div>
-        <div className ="img"> </div>
-  </div>
-  {/*      </WelcomeContainer> */}
 
+        </div>
+        <img src= {basura}/>
+  </div>
   <div id='Parte2'> 
       <h1>Cuidemos nuestro planeta</h1>
-      <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum nisi velit esse dolor, deserunt obcaecati laudantium explicabo amet commodi magnam reiciendis voluptatem perferendis corporis ab doloribus quibusdam. Illo, quod dolorem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate magnam dolorum et harum cumque veritatis corporis officia nostrum. Dolorem, debitis incidunt? Nobis, fuga ipsa error ipsum quasi ducimus eaque nostrum.</p>
+      <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum nisi velit esse dolor, deserunt obcaecati laudantium explicabo amet commodi magnam reiciendis voluptatem perferendis corporis ab doloribus quibusdam. Illo, quod dolorem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate magnam dolorum et harum cumque veritatis corporis officia nostrum. Dolorem, debitis incidunt? Nobis, fuga ipsa error ipsum quasi ducimus eaque nostrum.</p>      
   </div>
 
   <div id="Parte3">
@@ -88,18 +83,9 @@ function Main() {
     </div>
   </div>
 
-  <div id="Parte4">
-      <h1 className='titulo'> Acceder al mapa</h1>
-      <div className ="mapaimg"> </div>
-  </div>
-
 <footer className='footer'>Rexat - 2022</footer>
 </div>
     </>    
   )
 }
 export default Main
-/* const WelcomeContainer = styled.nav`
-`
-const NavContainer = styled.nav`
-` */

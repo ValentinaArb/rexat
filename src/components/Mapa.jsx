@@ -1,4 +1,4 @@
-/* export default function Mapa(){
+export default function Mapa(){
     return (
     <div className = "mapa">
         <iframe 
@@ -13,4 +13,4 @@
         ></iframe>
          </div>
     );
-} */
+} 
