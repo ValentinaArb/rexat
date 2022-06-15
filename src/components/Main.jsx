@@ -1,10 +1,16 @@
 import React from 'react'
 import "./Main.css"
 import basura from "../img/basura.png"
+import logo from "../img/logoRXT.png"
+import planeta from "../img/planeta.png"
+import MapView from './MapView'
+import {Link, Nav, Navbar}from 'react-router-dom'; /* "react-router-dom" */;
+
 function Main() {
   return (
     <>
            <div className="Navbar">
+           <img className= "logo" src= {logo} alt=" "/>
             <a className = "Seccion" href="#Parte1">Rexat</a>
             <a className = "Seccion" href="#Parte2">Concientizate</a>
             <a className = "Seccion" href="#Parte3">Conocenos</a>
@@ -14,15 +20,21 @@ function Main() {
   <div id= "Parte1">
       <div className="Text">
         <div className = "Hola"> <b>Hola, <br></br> Somos Rexat</b></div> <br></br>
-          <button className="IrMapa">Ir al mapa</button>
+          {/* <button className="IrMapa">Ir al mapa</button> */}
 
         </div>
-        <img src= {basura}/>
+        <img src= {basura} alt=" "/>
   </div>
   <div id='Parte2'> 
       <h1>Cuidemos nuestro planeta</h1>
       <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum nisi velit esse dolor, deserunt obcaecati laudantium explicabo amet commodi magnam reiciendis voluptatem perferendis corporis ab doloribus quibusdam. Illo, quod dolorem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate magnam dolorum et harum cumque veritatis corporis officia nostrum. Dolorem, debitis incidunt? Nobis, fuga ipsa error ipsum quasi ducimus eaque nostrum.</p>      
   </div>
+  <Navbar bg = "light" variant = "light"></Navbar>
+    <Nav className ="mr-auto">
+      <Nav.Link>
+        <Link to= "/MapView">Ir al Mapa</Link>
+      </Nav.Link>
+    </Nav>
 
   <div id="Parte3">
     <div className="Grid1">
@@ -82,7 +94,10 @@ function Main() {
       </div>
     </div>
   </div>
-
+<div id="Parte4"> 
+<h1 className='titulo'>Acceder al mapa</h1>
+<img className= "planeta" src= {planeta} alt=" "/>
+</div>
 <footer className='footer'>Rexat - 2022</footer>
 </div>
     </>    

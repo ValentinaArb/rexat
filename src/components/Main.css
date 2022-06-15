@@ -3,6 +3,8 @@
     color: white;
     text-decoration: none;
     margin-right: 10rem;
+    align-items: center;  justify-content: center;
+
 }
 .Navbar{
     padding: 15px;
@@ -86,5 +88,15 @@
     background-color: #FF921C;
     height:300px; width: 300px;
     margin:50px;
+    display: flex; align-items: center;  justify-content: center;
+}
+
+.logo{
+    height:70px;
+    margin-right: 30rem;
+}
+
+.planeta{
+    margin: 5cm;
     display: flex; align-items: center;  justify-content: center;
 }
