@@ -3,9 +3,7 @@ import "./Main.css"
 import basura from "../img/basura.png"
 import logo from "../img/logoRXT.png"
 import planeta from "../img/planeta.png"
-import MapView from './MapView'
-import {BrowserRouter as Router, Route, Routes, NavLink} from "react-router-dom";
-
+import {NavLink} from "react-router-dom";
 
 function Main() {
   return (
@@ -25,14 +23,12 @@ function Main() {
           <button className="IrMapa">Ir al mapa</button> 
 
         </div>
-
     
-        <NavLink to = "/Hola">
-        Hola
-        </NavLink>
-        <NavLink to = "/Chau">
-        Chau
-        </NavLink>
+    <nav>
+      <span>Prueba:</span> 
+        <NavLink to = "/">Home</NavLink>
+        <NavLink to = "/mapview">Mapa</NavLink>
+    </nav>
 
         <img className='basura' src= {basura} alt=" "/>
   </div>
@@ -40,12 +36,6 @@ function Main() {
       <h1>Cuidemos nuestro planeta</h1>
       <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum nisi velit esse dolor, deserunt obcaecati laudantium explicabo amet commodi magnam reiciendis voluptatem perferendis corporis ab doloribus quibusdam. Illo, quod dolorem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate magnam dolorum et harum cumque veritatis corporis officia nostrum. Dolorem, debitis incidunt? Nobis, fuga ipsa error ipsum quasi ducimus eaque nostrum.</p>      
   </div>
-{/*   <Navbar bg = "light" variant = "light"></Navbar>
-    <Nav className ="mr-auto">
-      <Nav.Link>
-        <Link to= "/MapView">Ir al Mapa</Link>
-      </Nav.Link>
-    </Nav> */}
 
   <div id="Parte3">
     <div className="Grid1">
@@ -66,7 +56,6 @@ function Main() {
       <div className ="Conocenosimg"> </div>  
     </div>
 
-    <h1 className='titulo'>Conocenos</h1> 
     <div className = "Grid2">
       <div className = "Joaco">
         <h2 className='Nombre'> Joaquín<br></br>Marcel </h2>

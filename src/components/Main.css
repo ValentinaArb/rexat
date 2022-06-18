@@ -42,7 +42,7 @@
     display: grid;
     display:flex; align-items: center;  justify-content: center;
     grid-template-columns: 25% 25% 25% 25%;
-    padding:100px;
+    padding-bottom:100px;
     grid-gap: 150px;
 }
 .Grid1{
@@ -91,9 +91,9 @@
 }
 
 .planeta{
-    margin: 5cm;
+    margin: 2cm;
     display: flex; 
-    transform: translateX(26rem)
+    transform: translateX(34rem)
 }
 .basura{
     margin: 8rem;

@@ -1,18 +1,20 @@
 import React from "react";
 import Main from "./components/Main";
-import ConceptosBasicos from "./components/Conceptosbasicos";
-import {BrowserRouter as Router, Route, Routes, Link} from "react-router-dom";
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import MapView from "./components/MapView";
 
 function App() {   
     return(
-     <>      
-       <Router>
+     <>   
+      <Router>
         <Main/>
-        <Routes>
-            <Route exact path = "/main" component = {Main}/>         
-        </Routes>
-    </Router>            
-      </> 
+          <Routes>
+              <Route exact path = "/main" component = {Main}/> 
+              <Route exact path = "/MapView" component = {MapView}/>                 
+          </Routes>
+        </Router>
+      </>  
+      
     );
 }
 export default App;
