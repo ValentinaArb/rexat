@@ -4,6 +4,7 @@ import basura from "../img/basura.png"
 import logo from "../img/logoRXT.png"
 import planeta from "../img/planeta.png"
 import {NavLink} from "react-router-dom";
+import MapView from "../components/MapView"
 
 function Main() {
   return (
@@ -20,8 +21,7 @@ function Main() {
   <div id= "Parte1">
       <div className="Text">
         <div className = "Hola"> <b>Hola, <br></br> Somos Rexat</b></div> <br></br>
-          <button className="IrMapa">Ir al mapa</button> 
-
+          <button className="IrMapa">Ir al mapa</button>
         </div>
     
     <nav>

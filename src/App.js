@@ -9,12 +9,11 @@ function App() {
       <Router>
         <Main/>
           <Routes>
-              <Route exact path = "/main" component = {Main}/> 
-              <Route exact path = "/MapView" component = {MapView}/>                 
+              <Route exact path = "/" component = {Main}/> 
+              <Route exact path = "/mapView" component = {MapView}/>                 
           </Routes>
         </Router>
-      </>  
-      
+      </>      
     );
 }
 export default App;

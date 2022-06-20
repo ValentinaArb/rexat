@@ -98,3 +98,8 @@
 .basura{
     margin: 8rem;
 }
+
+.leaflet-container{
+    width: 100vw;
+    height: 100vh;
+}
