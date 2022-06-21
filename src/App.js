@@ -10,10 +10,12 @@ function App() {
         <Main/>
           <Routes>
               <Route exact path = "/" component = {Main}/> 
-              <Route exact path = "/mapView" component = {MapView}/>                 
+              <Route exact path = "/mapview" component = {MapView}/>                 
           </Routes>
         </Router>
       </>      
     );
 }
 export default App;
+
+//npm i react-leaflet leaflet 
