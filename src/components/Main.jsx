@@ -100,6 +100,9 @@ function Main() {
 </div>
 <footer className='footer'>Rexat - 2022</footer>
 </div>
+
+<MapView/> 
+
     </>    
   )
 }
