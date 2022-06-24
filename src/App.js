@@ -1,20 +1,18 @@
 import React from "react";
 import Main from "./components/Main";
-import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
-import MapView from "./components/MapView";
+import {BrowserRouter, Routes, Route} from 'react-router-dom';import MapView from "./components/MapView";
 
 function App() {   
-    return(
-     <>   
-      <Router>
-        <Main/>
-          <Routes>
-              <Route exact path = "/" component = {Main}/> 
-              <Route exact path = "/mapview" component = {MapView}/>                 
-          </Routes>
-        </Router>
-      </>      
-    );
+   return(
+     <>  
+     <BrowserRouter>
+       <Routes> 
+         <Route path="/" element={<Main/>}/>
+         <Route path="/mapview" element={<MapView/>}/>          
+       </Routes>
+     </BrowserRouter>
+      </>       
+   );
 }
 export default App;
 

@@ -3,20 +3,17 @@ import{MapContainer, TileLayer, Marker, Popup} from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import {Link} from "react-router-dom";
+import Main from "./Main";
 
  const markerIcon = new L.Icon({
     iconUrl: require("../img/icon.png"),
     iconSize: [30,45],
 }) 
 
-function mapView() {   
-      
-     return <>  
-      <nav>
-        <Link to = "/" className = "IrMapa">Volver</Link>
-      </nav>     
-     <MapContainer center = {{lat:"-34.54949600222229", lng: "-58.454048583909845"}} zoom ={12}>      
-     
+function Mapa() {    
+    return <>    
+    <MapContainer center = {{lat:"-34.54949600222229", lng: "-58.454048583909845"}} zoom ={12}>      
+    
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'/> 
        
        <Marker position={{lat:"-34.52332670913202", lng: "-58.46806888901411 "}} icon ={markerIcon}>
@@ -43,10 +40,9 @@ function mapView() {
          </Popup>
        </Marker>
        
-     </MapContainer>   
-    
-     </>
+     </MapContainer>  
      
-}
-
-export default mapView;
+     </>
+ 
+ }
+ export default Map;

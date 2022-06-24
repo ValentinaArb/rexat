@@ -3,8 +3,7 @@ import "./Main.css"
 import basura from "../img/basura.png"
 import logo from "../img/logoRXT.png"
 import planeta from "../img/planeta.png"
-import {NavLink} from "react-router-dom";
-import MapView from "../components/MapView"
+import {Link} from "react-router-dom";
 
 function Main() {
   return (
@@ -21,15 +20,12 @@ function Main() {
   <div id= "Parte1">
       <div className="Text">
         <div className = "Hola"> <b>Hola, <br></br> Somos Rexat</b></div> <br></br>
-          <button className="IrMapa">Ir al mapa</button>
+        <nav>
+        <Link to = "/mapview" className = "IrMapa">Mapa</Link>
+      </nav>
         </div>
     
-    <nav>
-      <span>Prueba:</span> 
-        <NavLink to = "/">Home</NavLink>
-        <NavLink to = "/mapview">Mapa</NavLink>
-    </nav>
-
+    
         <img className='basura' src= {basura} alt=" "/>
   </div>
   <div id='Parte2'> 
@@ -95,15 +91,14 @@ function Main() {
     </div>
   </div>
 <div id="Parte4"> 
+
 <h1 className='titulo'>Acceder al mapa</h1>
-<img className= "planeta" src= {planeta} alt=" "/>
+<Link to = "/mapview" className = "IrMapa">
+<img className= "planeta" src= {planeta} alt=" "/></Link>
 </div>
 <footer className='footer'>Rexat - 2022</footer>
 </div>
-
-<MapView/> 
-
-    </>    
+</>    
   )
 }
 export default Main

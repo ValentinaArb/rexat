@@ -7,7 +7,6 @@
 
 }
 .Navbar{
-    padding: 15px;
     background-color: #3A5A40;
     display: flex;  align-items: center;  justify-content: center;
 }
@@ -23,7 +22,6 @@
 }
 .IrMapa{
    font-size: 20px;
-   background-color: #FF921C;
 }
 .img {
     background-color: #FF921C;
@@ -86,14 +84,15 @@
     display: flex; align-items: center;  justify-content: center;
 }
 .logo{
-    height:70px;
-    margin-right: 40rem;
+    height:50px;
+    margin-right: 28rem;
 }
 
 .planeta{
     margin: 2cm;
-    display: flex; 
-    transform: translateX(34rem)
+    display: inline; 
+    transform: translateX(26.5rem)
+
 }
 .basura{
     margin: 8rem;
@@ -101,5 +100,5 @@
 
 .leaflet-container{
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
 }
