@@ -1,0 +1,14 @@
+.Page{
+    display:inline-block;
+    position:absolute;
+    }
+    
+.HomeBtn{
+    background-color: #3A5A40;
+    color: black;
+    border-radius: 50%;
+    position: absolute;
+    /* bottom:4em;
+    right:4em; */
+    padding: 1%;
+    }

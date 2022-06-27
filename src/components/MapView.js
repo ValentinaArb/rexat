@@ -3,18 +3,18 @@ import{MapContainer, TileLayer, Marker, Popup} from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import {Link} from "react-router-dom";
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import "./MapView.css"
 
  const markerIcon = new L.Icon({
     iconUrl: require("../img/icon.png"),
     iconSize: [30,45],
-}) 
+})
 
-function mapView() {   
-      
+function mapView() {      
      return <>  
-      <nav>
-        <Link to = "/" className = "IrMapa">Volver</Link>
-      </nav>     
+      <div className = "Page">
+
      <MapContainer center = {{lat:"-34.54949600222229", lng: "-58.454048583909845"}} zoom ={12}>      
      
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'/> 
@@ -44,7 +44,12 @@ function mapView() {
        </Marker>
        
      </MapContainer>   
-    
+     
+     <Link to = "/" className = "Volver">
+        {/* <Button variant="contained" size="medium" color="primary"> Volver </Button> */}
+        <HomeOutlinedIcon className = "HomeBtn"/>
+      </Link>  
+      </div>
      </>
      
 }

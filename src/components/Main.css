@@ -22,6 +22,13 @@
 }
 .IrMapa{
    font-size: 20px;
+   background-color: #FF921C;
+   border-radius: 10%;
+   display: inline-flex;
+   color: black;
+   padding: 0.5rem;
+   margin-top:3%;
+
 }
 .img {
     background-color: #FF921C;
@@ -92,8 +99,8 @@
     margin: 2cm;
     display: inline; 
     transform: translateX(26.5rem)
-
 }
+
 .basura{
     margin: 8rem;
 }

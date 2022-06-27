@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react';
 import "./Main.css"
 import basura from "../img/basura.png"
 import logo from "../img/logoRXT.png"
@@ -8,31 +8,27 @@ import {Link} from "react-router-dom";
 function Main() {
   return (
     <>
-           <div className="Navbar">  
-           <img className= "logo" src= {logo} alt=" "/>
-            {/* <a className = "Seccion" href="#Parte1">Rexat</a> */}
-            <a className = "Seccion" href="#Parte2">Concientizate</a>
-            <a className = "Seccion" href="#Parte3">Conocenos</a>
-            <a className = "Seccion" href="#Parte4">Mapa</a>
-           </div>
+      <div className="Navbar">  
+        {/* <img className= "logo" src= {logo} alt=" "/> */}
+        {/* <a className = "Seccion" href="#Parte1">Rexat</a> */}
+        <a className = "Seccion" href="#Parte2">Concientizate</a>
+        <a className = "Seccion" href="#Parte3">Conocenos</a>
+        <a className = "Seccion" href="#Parte4">Mapa</a>
+      </div>
            
 <div className='Inicio'>
+  
   <div id= "Parte1">
-      <div className="Text">
-        <div className = "Hola"> <b>Hola, <br></br> Somos Rexat</b></div> <br></br>
-        <nav>
-        <Link to = "/mapview" className = "IrMapa">Mapa</Link>
-      </nav>
-        </div>
-    
-    
-        <img className='basura' src= {basura} alt=" "/>
+    <div className="Text">
+     <div className = "Hola"> Hola, <br></br> Somos <b><span style={{ color: "#ff951c" }}>Rexat</span> </b></div>
+     {/*  <Link to = "/mapview" className = "IralMapa"> <button className = "IrMapa">Ir al mapa</button> </Link> */}
+    </div>    
+      <img className='basura' src= {basura} alt=" "/>
   </div>
   <div id='Parte2'> 
       <h1>Cuidemos nuestro planeta</h1>
       <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum nisi velit esse dolor, deserunt obcaecati laudantium explicabo amet commodi magnam reiciendis voluptatem perferendis corporis ab doloribus quibusdam. Illo, quod dolorem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate magnam dolorum et harum cumque veritatis corporis officia nostrum. Dolorem, debitis incidunt? Nobis, fuga ipsa error ipsum quasi ducimus eaque nostrum.</p>      
   </div>
-
   <div id="Parte3">
     <div className="Grid1">
         <div className= "QuienesSomos"> 
@@ -90,15 +86,15 @@ function Main() {
       </div>
     </div>
   </div>
-<div id="Parte4"> 
+  <div id="Parte4">
+  <h1 className='titulo'>Acceder al mapa</h1>
+  <Link to = "/mapview" className = "IralMapa"> <img className= "planeta" src= {planeta} alt=" "/></Link>
+  </div>
+   
+  <footer className='footer'>Rexat - 2022</footer>
 
-<h1 className='titulo'>Acceder al mapa</h1>
-<Link to = "/mapview" className = "IrMapa">
-<img className= "planeta" src= {planeta} alt=" "/></Link>
-</div>
-<footer className='footer'>Rexat - 2022</footer>
 </div>
 </>    
-  )
+  );
 }
 export default Main
