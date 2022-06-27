@@ -4,10 +4,12 @@ import basura from "../img/basura.png"
 import logo from "../img/logoRXT.png"
 import planeta from "../img/planeta.png"
 import {Link} from "react-router-dom";
+import Scroll from "../components/Scroll"
 
 function Main() {
   return (
     <>
+      <Scroll showBelow={250}/>
       <div className="Navbar">  
         {/* <img className= "logo" src= {logo} alt=" "/> */}
         {/* <a className = "Seccion" href="#Parte1">Rexat</a> */}
