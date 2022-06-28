@@ -92,7 +92,7 @@
 }
 .logo{
     height:50px;
-    margin-right: 28rem;
+    margin-right: 15rem;
 }
 
 .planeta{
@@ -108,4 +108,19 @@
 .leaflet-container{
     width: 100vw;
     height: 90vh;
+}
+
+.separador{
+    display: flex; align-items: center;  justify-content: center;
+    width: 30rem;
+}
+
+.Rexat{
+    display: flex; align-items: center;  justify-content: center;
+    font-size: 40px;    
+}
+
+#Seguinos{
+    display: flex; align-items: center;  justify-content: center;
+    font-size: 40px;
 }
