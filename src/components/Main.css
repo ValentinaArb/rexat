@@ -4,7 +4,6 @@
     text-decoration: none;
     margin-right: 10rem;
     align-items: center;  justify-content: center;
-
 }
 .Navbar{
     background-color: #3A5A40;
@@ -37,11 +36,10 @@
     float:right;
 }
 #Parte2{
-    align-items: center;  justify-content: center;
-    padding:100px;
-    display: grid;
-    align-items: center;  justify-content: center;
-    grid-template-columns: 50% 50%;
+    padding:1rem;
+    display:flex;
+    justify-content: center;
+
 }
 .Grid2{
     display: grid;
@@ -96,9 +94,8 @@
 }
 
 .planeta{
-    margin: 2cm;
+    padding: 2cm;
     display: inline; 
-    transform: translateX(26.5rem)
 }
 
 .basura{
@@ -111,16 +108,18 @@
 }
 
 .separador{
-    display: flex; align-items: center;  justify-content: center;
     width: 30rem;
 }
 
-.Rexat{
+#Rexat{
     display: flex; align-items: center;  justify-content: center;
     font-size: 40px;    
 }
 
-#Seguinos{
+#Conocenos{
     display: flex; align-items: center;  justify-content: center;
     font-size: 40px;
+}
+.centrar{
+    display: flex; justify-content: center;
 }

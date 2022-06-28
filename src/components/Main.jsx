@@ -6,20 +6,20 @@ import planeta from "../img/planeta.png"
 import {Link} from "react-router-dom";
 import Scroll from "../components/Scroll"
 import separador from "../img/separador.png"
+
 function Main() {
   return (
     <>
       {/* <Scroll showBelow={250}/> */}
       <div className="Navbar">  
         <img className= "logo" src= {logo} alt=" "/>
-        <a className = "Seccion" href="#Parte1">Rexat</a>
-        <a className = "Seccion" href="#Parte2">Concientizate</a>
-        <a className = "Seccion" href="#Seguinos">Conocenos</a>
+        <a className = "Seccion" href="#Rexat">Rexat</a>
+{/*         <a className = "Seccion" href="#Parte2">Concientizate</a>
+ */}        <a className = "Seccion" href="#Conocenos">Conocenos</a>
         <a className = "Seccion" href="#Parte4">Mapa</a>
       </div>
            
-<div className='Inicio'>
-  
+<div className='Inicio'>  
   <div id= "Parte1">
     <div className="Text">
      <div className = "Hola"> Hola, <br></br> Somos <b><span style={{ color: "#ff951c" }}>Rexat</span> </b></div>
@@ -27,15 +27,17 @@ function Main() {
     </div>    
       <img className='basura' src= {basura} alt=" "/>
   </div>
-   <img className='separador' src= {separador} alt=" "/>
+
+{/*    <div className='centrar'><img className='separador' src= {separador} alt=" "/></div>
+ */}
   <div id='Parte2'> 
-      <h1>Cuidemos nuestro planeta</h1>
-      <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum nisi velit esse dolor, deserunt obcaecati laudantium explicabo amet commodi magnam reiciendis voluptatem perferendis corporis ab doloribus quibusdam. Illo, quod dolorem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate magnam dolorum et harum cumque veritatis corporis officia nostrum. Dolorem, debitis incidunt? Nobis, fuga ipsa error ipsum quasi ducimus eaque nostrum.</p>      
+  <h2>Cuidemos nuestro planeta<br></br>Actualmente hay mucha basura en las costas de todo el mundo <br></br> </h2> <p>
+      y hay que trabajar juntos para resolverlo, <br></br> para tener un futuro mejor.</p>      
   </div>
   <div id="Parte3">
-       <img className='separador' src= {separador} alt=" "/>
+  <div className='centrar'><img className='separador' src= {separador} alt=" "/></div>
 
-  <h1 className="Rexat"> ¿Qué es Rexat?</h1>
+  <h1 id="Rexat"> ¿Qué es Rexat?</h1>
     <div className="Grid1">
         <div className= "QuienesSomos"> 
           <h1> ¿Quiénes somos?</h1>
@@ -53,15 +55,15 @@ function Main() {
         </div>
       <div className ="Conocenosimg"> </div>  
     </div>    
-    <h1 id="Seguinos"> Seguinos </h1>
+    <h1 id="Conocenos"> Contactanos </h1>
     <div className = "Grid2">
       <div className = "Joaco">
         <h2 className='Nombre'> Joaquín<br></br>Marcel </h2>
         <div className = "Info"> 
           <button>L</button>
           <p> Back-End</p>
-          <button> IG </button>
-        </div>
+{/*           <button> IG </button>
+ */}        </div>
       </div>
 
       <div className = "Tina">
@@ -69,8 +71,8 @@ function Main() {
         <div className = "Info"> 
           <button>L</button>
           <p> Full-Stack </p>
-          <button> IG </button>
-        </div>
+{/*           <button> IG </button>
+ */}        </div>
       </div>
 
       <div className = "Iara">
@@ -78,8 +80,8 @@ function Main() {
         <div className = "Info"> 
           <button>L</button>
           <p> Full-Stack </p>
-          <button> IG </button>
-        </div>
+{/*           <button> IG </button>
+ */}        </div>
       </div>
 
       <div className = "Uma">
@@ -87,15 +89,15 @@ function Main() {
         <div className = "Info"> 
           <button>L</button>
           <p>  UX/UI Designer  </p>
-          <button> IG </button>
-        </div>
+{/*           <button> IG </button>
+ */}        </div>
       </div>
     </div>
   </div>
   <div id="Parte4">
-    <img className='separador' src= {separador} alt=" "/>
+  <div className='centrar'><img className='separador' src= {separador} alt=" "/></div>
     <h1 className='titulo'>Acceder al mapa</h1>
-    <Link to = "/mapview" className = "IralMapa"> <img className= "planeta" src= {planeta} alt=" "/></Link>
+    <div className='centrar'><Link to = "/mapview" className = "IralMapa"> <img className= "planeta" src= {planeta} alt=" "/></Link> </div>
   </div>
    
   <footer className='footer'>Rexat - 2022</footer>
