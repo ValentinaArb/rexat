@@ -1,4 +1,4 @@
-import React, {useState,UseEffect, useEffect} from 'react'
+/* import React, {useState,UseEffect, useEffect} from 'react'
 import { makeStyles } from '@mui/material/core/styles';
 import ExpandLessIcon from '@material/icons/ExpandLess';
 import { IconButton } from '@mui/material/core/IconButton';
@@ -20,7 +20,7 @@ const Scroll = (
     useEffect(()=>{
         if(showBelow){
             window.addEventListener('scroll',HandleScroll)
-            return()=> window.removeEventListener('scroll',hanldeScroll)
+            return()=> window.removeEventListener('scroll',handleScroll)
         }    
     })
 
@@ -36,4 +36,4 @@ const Scroll = (
     )
 }
 
-export default Scroll
+export default Scroll */

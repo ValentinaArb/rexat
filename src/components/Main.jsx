@@ -9,7 +9,7 @@ import Scroll from "../components/Scroll"
 function Main() {
   return (
     <>
-      <Scroll showBelow={250}/>
+      {/* <Scroll showBelow={250}/> */}
       <div className="Navbar">  
         {/* <img className= "logo" src= {logo} alt=" "/> */}
         {/* <a className = "Seccion" href="#Parte1">Rexat</a> */}
