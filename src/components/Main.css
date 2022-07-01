@@ -11,14 +11,14 @@
 }
 #Parte1{
     display: flex;  align-items: center;  justify-content: center;
+    padding: 3rem;
+    font-size: 65px;
 }
 .Text{
     display: inline-block;
-    margin:50px;
+    margin:60px;
 }
-.Hola{
-    font-size: 65px;
-}
+
 .IrMapa{
    font-size: 20px;
    background-color: #FF921C;
@@ -36,10 +36,10 @@
     float:right;
 }
 #Parte2{
-    padding:1rem;
-    display:flex;
-    justify-content: center;
-
+    padding: 3rem;
+}
+.frase{
+    justify-content: center; display: flex;
 }
 .Grid2{
     display: grid;
@@ -58,6 +58,7 @@
 .Conocenosimg{
     background-color: #FF921C;
     height:300px; width: 500px;
+    display: flex; align-items: center;  justify-content: center;
 }
 .Info{
     display: inline-flex; align-items: center;
@@ -122,4 +123,7 @@
 }
 .centrar{
     display: flex; justify-content: center;
+}
+.input{
+    padding: 2%;
 }
