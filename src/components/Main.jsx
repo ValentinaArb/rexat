@@ -83,7 +83,7 @@ function Main() {
   <div id= "Parte1">
     <div className="Text">
      <div className = "Hola"> Hola, <br></br> Somos <b><span style={{ color: "#ff951c" }}>Rexat</span> </b></div>
-      <Link to = "/mapview" className = "IralMapa"> <button className = "IrMapa">Ir al mapa</button> </Link>
+      <Link to = "/mapview" className = "IralMapa"> <button className = "BtnNaranja">Ir al mapa</button> </Link>
     </div>    
       <img className='basura' src= {basura} alt=" "/>
   </div>
@@ -120,8 +120,9 @@ function Main() {
     </div>    
     <h1 id="Conocenos"> Contactanos </h1>
     <div className = "Grid2">
+      
       <div className = "Joaco">
-        <h2 className='Nombre'> Joaquín<br></br>Marcel </h2>
+        <p className='Nombre'> Joaquín<br></br>Marcel </p>
         <div className = "Info"> 
           <button>L</button>
           <p> Back-End</p>
@@ -130,7 +131,7 @@ function Main() {
       </div>
 
       <div className = "Tina">
-        <h2 className='Nombre'> Valentina<br></br>Arbarello </h2>
+        <p className='Nombre'> Valentina<br></br>Arbarello </p>
         <div className = "Info"> 
           <button>L</button>
           <p> Full-Stack </p>
@@ -139,7 +140,7 @@ function Main() {
       </div>
 
       <div className = "Iara">
-        <h2 className='Nombre'> Iara<br></br>Srur </h2>
+        <p className='Nombre'> Iara<br></br>Srur </p>
         <div className = "Info"> 
           <button>L</button>
           <p> Full-Stack </p>
@@ -148,7 +149,7 @@ function Main() {
       </div>
 
       <div className = "Uma">
-        <h2 className='Nombre'> Uma<br></br>Grün </h2>
+        <p className='Nombre'> Uma<br></br>Grün </p>
         <div className = "Info"> 
           <button>L</button>
           <p>  UX/UI Designer  </p>

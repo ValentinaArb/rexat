@@ -49,6 +49,7 @@ function mapView() {
         {/* <Button variant="contained" size="medium" color="primary"> Volver </Button> */}
         <HomeOutlinedIcon className = "HomeBtn"/>
       </Link>  
+      <button className = "HomeBtn">Hola</button>
       </div>
      </>
      
