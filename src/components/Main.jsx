@@ -6,95 +6,34 @@ import planeta from "../img/planeta.png"
 import {Link} from "react-router-dom";
 import Scroll from "../components/Scroll"
 import separador from "../img/separador.png"
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import TextField from '@mui/material/TextField';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
-import Slide from '@mui/material/Slide';
-
-const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="up" ref={ref} {...props} />;
-});
 
 function Main() {
-  const [open, setOpen] = React.useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
   return (
     <>
       {/* <Scroll showBelow={250}/> */}
       <div className="Navbar">  
         <img className= "logo" src= {logo} alt=" "/>
         <a className = "Seccion" href="#Rexat">Rexat</a>
-    {/* <a className = "Seccion" href="#Parte2">Concientizate</a> */}        
         <a className = "Seccion" href="#Conocenos">Conocenos</a>
-        <a className = "Seccion" href="#Parte4">Mapa</a>
-        <button /* variant="outlined" */ onClick={handleClickOpen}>
-            Ingresar
-        </button>
-        <Dialog
-            open={open}
-            TransitionComponent={Transition}
-            keepMounted
-            onClose={handleClose}
-            aria-describedby="alert-dialog-slide-description"
-        >
-            <DialogTitle className = "centrar">{"INICIAR SESIÓN"}</DialogTitle>
-              <DialogContent>
-                <TextField className='input'
-                autoFocus
-                margin="dense"
-                id="name"
-                label="Email Address"
-                type="email"
-                fullWidth
-                variant="standard"
-                />
-                <TextField className='input'
-                  name="password"
-                  type="password"
-                  placeholder="password"
-                  label="Password"
-                  fullWidth
-                  variant="standard"
-                />
-              </DialogContent>    
-              <DialogContentText>
-                 <a className = "" href="/Registrarse">Registrarme</a>
-              </DialogContentText>        
-            <DialogActions>
-              <Button onClick={handleClose}>CANCELAR</Button>
-              <Button onClick={handleClose}>CONTINUAR</Button>
-            </DialogActions>
-        </Dialog>      
+        <a className = "Seccion" href="#Parte4">Mapa</a>        
       </div>
-           
-<div className='Inicio'>  
+      
+<div className='Inicio'>
   <div id= "Parte1">
     <div className="Text">
      <div className = "Hola"> Hola, <br></br> Somos <b><span style={{ color: "#ff951c" }}>Rexat</span> </b></div>
       <Link to = "/mapview" className = "IralMapa"> <button className = "BtnNaranja">Ir al mapa</button> </Link>
-    </div>    
+    </div>
       <img className='basura' src= {basura} alt=" "/>
   </div>
 
-{/*    <div className='centrar'><img className='separador' src= {separador} alt=" "/></div>
- */}
-  <div id='Parte2'> 
+{/*    <div className='centrar'><img className='separador' src= {separador} alt=" "/></div>*/}
+
+  <div id='Parte2'>
     <h2 className='frase'>Cuidemos nuestro planeta</h2>
     <h3 className='frase'>Actualmente hay mucha basura en las costas de todo el mundo </h3>
     <p className='frase'>Y hay que trabajar juntos para resolverlo, </p>
-    <p className='frase'>para tener un futuro mejor.</p>      
+    <p className='frase'>para tener un futuro mejor.</p>
   </div>
 
   <div id="Parte3">
@@ -102,7 +41,7 @@ function Main() {
 
   <h1 id="Rexat"> ¿Qué es Rexat?</h1>
     <div className="Grid1">
-        <div className= "QuienesSomos"> 
+        <div className= "QuienesSomos">
           <h1> ¿Quiénes somos?</h1>
           <p>Somos un grupo de estudiantes de 5to año en ORT Argentina. Creamos Rexat, una plataforma que mediante imagenes satelitales permite reconocer grandes acumulaciones de basura marina en las costas , con el fin de ayudar al medio ambiente. </p>
         </div>

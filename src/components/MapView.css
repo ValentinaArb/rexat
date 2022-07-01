@@ -3,12 +3,15 @@
     position:absolute;
     }
     
-.HomeBtn{
-    background-color: #3A5A40;
+.BtnMapa{
+    /* background-color: #3A5A40; */
     color: black;
-    border-radius: 50%;
-    position: absolute;
-    bottom:4em;
-    right:4em;
-    padding: 1%;
-    }
+    /*border-radius: 50%;
+     right:4em;*/
+    padding: 1%; 
+    cursor:pointer;
+}
+.Ejemplo{
+    margin-left: 1%;
+    color:red;
+}

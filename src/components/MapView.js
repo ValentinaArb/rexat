@@ -1,18 +1,76 @@
 import React from "react";
+import "./MapView.css"
 import{MapContainer, TileLayer, Marker, Popup} from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import {Link} from "react-router-dom";
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
-import "./MapView.css"
+import AddIcon from '@mui/icons-material/Add';
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import TextField from '@mui/material/TextField';
+import DialogTitle from '@mui/material/DialogTitle';
+import Slide from '@mui/material/Slide';
+
 
  const markerIcon = new L.Icon({
     iconUrl: require("../img/icon.png"),
     iconSize: [30,45],
-})
+});
 
-function mapView() {      
-     return <>  
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
+
+
+function MapView() { 
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+     
+     return ( 
+     <>
+        <Dialog
+            open={open}
+            TransitionComponent={Transition}
+            keepMounted
+            onClose={handleClose}
+            aria-describedby="alert-dialog-slide-description"
+        >
+            <DialogTitle className = "centrar">{"Agregar punto"}</DialogTitle>
+              <DialogContent>
+                <TextField className='input'
+                autoFocus
+                margin="dense"
+                id="name"
+                label="Nombre"
+                type="text"
+                fullWidth
+                variant="standard"
+                />
+                <TextField className='input'
+                margin="dense"
+                id="coordenada"
+                label="Coordenada"
+                placeholder="Ejemplo: 41.40338; 2.17403"
+                type="text"
+                fullWidth
+                variant="standard"
+                />
+              </DialogContent> 
+            <DialogActions>
+              <Button onClick={handleClose}>CANCELAR</Button>
+              <Button onClick={handleClose}>AGREGAR</Button>
+            </DialogActions>
+        </Dialog>      
       <div className = "Page">
 
      <MapContainer center = {{lat:"-34.54949600222229", lng: "-58.454048583909845"}} zoom ={12}>      
@@ -46,13 +104,12 @@ function mapView() {
      </MapContainer>   
      
      <Link to = "/" className = "Volver">
-        {/* <Button variant="contained" size="medium" color="primary"> Volver </Button> */}
-        <HomeOutlinedIcon className = "HomeBtn"/>
+        <HomeOutlinedIcon className = "BtnMapa"/>
       </Link>  
-      <button className = "HomeBtn">Hola</button>
+      <AddIcon className = "BtnMapa"  onClick={handleClickOpen}/>
       </div>
      </>
-     
+     );
 }
 
-export default mapView;
+export default MapView;
