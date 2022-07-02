@@ -31,7 +31,7 @@ export default function Main() {
         <img className= "logo" src= {logo} alt=" "/>
         <a className = "Seccion" href="#Rexat">Rexat</a>
         <a className = "Seccion" href="#Conocenos">Conocenos</a>
-        <a className = "Seccion" href="#titulo">Mapa</a>        
+        <a className = "Seccion" href="#titulo">trla</a>        
       </div>
       
       <div id= "Parte1">
