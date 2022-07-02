@@ -27,7 +27,6 @@
    color: black;
    padding: 0.5rem;
    margin-top:3%;
-
 }
 .img {
     background-color: #FF921C;
@@ -68,9 +67,6 @@
     text-decoration: underline;
 }
 
-.Inicio{
-    background-color: #FAF8D4;
-}
 .Nombre{
     display: flex; align-items: center;  justify-content: center;
     background-color: #FF921C;
@@ -127,3 +123,6 @@
 .input{
     padding: 2%;
 }
+.map-container {
+    background-color: teal;
+  }

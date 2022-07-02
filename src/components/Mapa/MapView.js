@@ -16,7 +16,7 @@ import Slide from '@mui/material/Slide';
 
 
  const markerIcon = new L.Icon({
-    iconUrl: require("../img/icon.png"),
+    iconUrl: require("../../img/icon.png"),
     iconSize: [30,45],
 });
 
@@ -91,7 +91,7 @@ function MapView() {
  
        <Marker position={{lat:" -34.48742043071295", lng: "-58.48086394951987 "}} icon ={markerIcon}>
          <Popup>
-             <b>Playita de Olivos, Argentina</b>
+             <b>Playita de Olivos, Martinez</b>
          </Popup>
        </Marker>
   
@@ -99,8 +99,7 @@ function MapView() {
          <Popup>
              <b>Mama Concert´s Playa, Pinamar</b>
          </Popup>
-       </Marker>
-       
+       </Marker>       
      </MapContainer>   
      
      <Link to = "/" className = "Volver">

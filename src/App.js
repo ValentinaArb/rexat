@@ -1,21 +1,22 @@
-import React from "react";
+import React from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Main from "./components/Main";
-import MapView from "./components/MapView";
+import MapView2 from "./components/Mapa/MapView2";
+import MapView  from "./components/Mapa/MapView";
 
-function App() {   
+export default function App() {   
    return(
      <>  
      <BrowserRouter>
        <Routes> 
          <Route path="/" element={<Main/>}/>
-         <Route path="/mapview" element={<MapView/>}/>{/* 
-         <Route path="/InicioSesion" element={<InicioSesion/>}/> */}
+         <Route path="/mapview" element={<MapView/>}/>
+         <Route path="/mapview2" element={<MapView2/>}/>
        </Routes>
      </BrowserRouter>
       </>       
    );
 }
-export default App;
 
 //npm i react-leaflet leaflet 
+//npm install --save mapbox-gl
