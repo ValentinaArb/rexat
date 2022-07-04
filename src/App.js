@@ -20,3 +20,4 @@ export default function App() {
 
 //npm i react-leaflet leaflet 
 //npm install --save mapbox-gl
+// npm i aos--save

@@ -1,14 +1,3 @@
-.Seccion {
-    font-size: 20px;
-    color: white;
-    text-decoration: none;
-    margin-right: 10rem;
-    align-items: center;  justify-content: center;
-}
-.Navbar{
-    background-color: #3A5A40;
-    display: flex;  align-items: center;  justify-content: center;
-}
 #Parte1{
     display: flex;  align-items: center;  justify-content: center;
     padding: 3rem;
@@ -19,12 +8,8 @@
     margin:60px;
 }
 
-.BtnNaranja{
+.BtnNaranja{    
    font-size: 20px;
-   background-color: #FF921C;
-   border-radius: 10%;
-   display: inline-flex;
-   color: black;
    padding: 0.5rem;
    margin-top:3%;
 }
