@@ -9,6 +9,8 @@ import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-load
 import Aos from "aos";
 import "aos/dist/aos.css";
 import Navbar from "./Navbar"
+import Scroll from "../components/Scroll"
+
 mapboxgl.accessToken = 'pk.eyJ1IjoidW1ncnUiLCJhIjoiY2w0bzd5aHc3MDR5ZzNkbGx5bzh0bWZ3YiJ9.1m8NjPzeitlkvyR7UsQzLQ';
 
 export default function Main() {
@@ -31,10 +33,20 @@ export default function Main() {
       zoom: zoom
     }); 
   }); */
+      const [open, setOpen] = React.useState(false);
+
+      const handleClickOpen = () => {
+        setOpen(true);
+      };
+
+      const handleClose = () => {
+        setOpen(false);
+      };
+      
   return (   
     <>
     <Navbar/>
-      
+    
     <div data-aos="fade-up" className="Inicio">
       <div data-aos="fade-up" id= "Parte1">
         <div className="Text">
