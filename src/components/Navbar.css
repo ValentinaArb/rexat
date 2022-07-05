@@ -15,7 +15,7 @@ body{
 }
 
 .nav a{
-    color: inherit;
+    position: relative;
     text-decoration: none;
     height: 100%;
     align-items: center;

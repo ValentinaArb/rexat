@@ -49,8 +49,8 @@ export default function Main() {
       <div data-aos="fade-up" id='Parte2'>
           <h2 className='frase'>Cuidemos nuestro planeta</h2>
           <h3 className='frase'>Actualmente hay mucha basura en las costas de todo el mundo </h3>
-          <p className='frase'>Y hay que trabajar juntos para resolverlo, </p>
-          <p className='frase'>para tener un futuro mejor.</p>
+          <h4 className='frase'>Y hay que trabajar juntos para resolverlo, </h4>
+          <h4 className='frase'>para tener un futuro mejor.</h4>
       </div>
 
       <div data-aos="fade-up" className='centrar'><img className='separador' src= {separador} alt=" "/></div>
