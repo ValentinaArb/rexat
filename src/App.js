@@ -21,3 +21,4 @@ export default function App() {
 //npm i react-leaflet leaflet 
 //npm install --save mapbox-gl
 // npm i aos--save
+//npm install --save react @trendmicro/react-sidenav

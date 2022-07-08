@@ -20,12 +20,16 @@
     }
 
     .btnMapa {
-      background-color: white;
+      background-color: rgb(76, 112, 56);
       padding: 6px 12px;
       z-index: 1;
       position: absolute;
       margin: 12px;
       border-radius: 4px;
-      top: 0;
-      left: 0;
+      bottom: 90%;
+      left: 90%;
+      }
+
+      body {
+        margin: 0;
       }

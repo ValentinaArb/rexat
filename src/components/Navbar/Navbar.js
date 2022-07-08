@@ -1,5 +1,5 @@
-import React, { useRef, useEffect, useState } from 'react';
-import logo from "../img/logoRXT.png"
+import React from 'react';
+import logo from "../../img/logoRXT.png"
 import "./Navbar.css"
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';

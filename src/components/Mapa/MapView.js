@@ -14,7 +14,6 @@ import TextField from '@mui/material/TextField';
 import DialogTitle from '@mui/material/DialogTitle';
 import Slide from '@mui/material/Slide';
 
-
  const markerIcon = new L.Icon({
     iconUrl: require("../../img/icon.png"),
     iconSize: [30,45],

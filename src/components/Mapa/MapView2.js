@@ -4,6 +4,7 @@ import "./MapView2.css"
 import {Link} from "react-router-dom";
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import AddIcon from '@mui/icons-material/Add';
+import Sidebar from "../Sidebar/Sidebar"
 
 mapboxgl.accessToken = 'pk.eyJ1IjoidW1ncnUiLCJhIjoiY2w0bzd5aHc3MDR5ZzNkbGx5bzh0bWZ3YiJ9.1m8NjPzeitlkvyR7UsQzLQ';
 
@@ -44,7 +45,8 @@ const handleClose = () => {
 };
 
 return (  
-  <>      
+  <> 
+    <Sidebar/>
     <div ref={mapContainer} className="map-container" />      
     <div className="sidebar"> Longitude: {lng} | Latitude: {lat} | Zoom: {zoom} </div>
     <div className = "btnMapa">
