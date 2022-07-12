@@ -1,9 +1,8 @@
-import React, { useRef, useEffect, useState } from 'react';
+/* import React, { useRef, useEffect, useState } from 'react'; */
 import "./Main.css";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import basura from "../../img/basura.png";
-import logo from "../../img/logoRXT.png";
 import linkedin from "../../img/linkedin.png";
 import planeta from "../../img/planeta.png";
 import separador from "../../img/separador.png";

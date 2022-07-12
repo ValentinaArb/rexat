@@ -1,4 +1,7 @@
-/* .a-Mapa  {
+#Sidebar{
+  background-color: #3A5A40;
+}
+/* /* .a-Mapa  {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -30,7 +33,3 @@
 .volver{
   display: inline-flex;
 } */
-
-.Sidebar{
-  background-color: #3A5A40;
-}

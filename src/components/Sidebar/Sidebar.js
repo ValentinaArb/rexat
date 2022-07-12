@@ -12,7 +12,7 @@ import {Link} from "react-router-dom";
 export default function Sidebar(){
     return(
         <>
-        <SideNav className="Sidebar">
+        <SideNav id="Sidebar">
             <SideNav.Toggle/>
                 <SideNav.Nav>
                     <NavItem eventKey="añadir-punto">

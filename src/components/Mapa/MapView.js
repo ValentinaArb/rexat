@@ -1,11 +1,12 @@
 import React, { useRef, useEffect, useState } from 'react';
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 import "./MapView.css"
-import {Link} from "react-router-dom";
-import AddIcon from '@mui/icons-material/Add';
 import Sidebar from "../Sidebar/Sidebar"
-import{MapContainer, TileLayer, Marker, Popup} from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import Slide from '@mui/material/Slide';
+/* import {Link} from "react-router-dom";
+import AddIcon from '@mui/icons-material/Add';
+import{MapContainer, TileLayer, Marker, Popup} from "react-leaflet";
 import L from "leaflet";
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
@@ -13,8 +14,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import TextField from '@mui/material/TextField';
 import DialogTitle from '@mui/material/DialogTitle';
-import DialogContentText from '@mui/material/DialogContentText';
-import Slide from '@mui/material/Slide';
+import DialogContentText from '@mui/material/DialogContentText'; */
 
 mapboxgl.accessToken = 'pk.eyJ1IjoidW1ncnUiLCJhIjoiY2w0bzd5aHc3MDR5ZzNkbGx5bzh0bWZ3YiJ9.1m8NjPzeitlkvyR7UsQzLQ';
 
