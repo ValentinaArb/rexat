@@ -1,4 +1,8 @@
 
+.Inicio{
+    background-color: #FAF8D4;
+}
+
 #Parte1{
     display: flex;  align-items: center;  justify-content: center;
     padding: 3rem;
@@ -109,6 +113,11 @@
 .input{
     padding: 2%;
 }
+.info{
+    display: inline-flex;
+    align-items: center;
+    }
+
 .map-container {
     background-color: teal;
     height: 10%;
@@ -116,3 +125,7 @@
     width: 10vw;
     height: 10vh;
   }
+
+.linkedin{
+    height:30px;
+}

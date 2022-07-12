@@ -3,6 +3,7 @@ import "./Main.css";
 import "aos/dist/aos.css";
 import basura from "../../img/basura.png";
 import logo from "../../img/logoRXT.png";
+import linkedin from "../../img/linkedin.png";
 import planeta from "../../img/planeta.png";
 import separador from "../../img/separador.png";
 import {Link} from "react-router-dom";
@@ -40,7 +41,7 @@ export default function Main() {
       <div data-aos="fade-up" id= "Parte1">
         <div className="Text">
         <div className = "Hola"> Hola, <br></br> Somos <b><span style={{ color: "#ff951c" }}>Rexat</span> </b></div>
-          <Link to = "/mapview"> <button className = "BtnNaranja">Ir al mapa 1</button> </Link>
+          <Link to = "/mapview"> <button className = "BtnNaranja">Ir al mapa</button> </Link>
         </div>
         <img className='basura' src= {basura} alt=" "/>
       </div>
@@ -76,31 +77,33 @@ export default function Main() {
       <div data-aos="fade-up" className = "Grid2">      
               <div className = "Joaco">
                 <p className='Nombre'> Joaquín<br></br>Marcel </p>
-                <div className = "Info"> 
-                  <button>L</button>
-                  <p> Back-End</p>
+                  <div className = "info">
+                  <a><img className='linkedin' src= {linkedin} alt=" "/></a>
+                  <div className='centrar'><p> Back-End</p></div>
                 </div>
               </div>
               <div className = "Tina">
                 <p className='Nombre'> Valentina<br></br>Arbarello </p>
-                <div className = "Info"> 
-                  <button>L</button>
-                  <p> Full-Stack </p>
-                </div>
+                  <div className= "centrar"><div className = "info"></div>
+                     <a><img className='linkedin' src= {linkedin} alt=" "/></a> 
+                    <div className='centrar'><p>Full-Stack</p></div>
+                   
+                  </div>
               </div>
               <div className = "Iara">
                 <p className='Nombre'> Iara<br></br>Srur </p>
-                <div className = "Info"> 
-                  <button>L</button>
-                  <p> Full-Stack </p>
+                  <div className = "info">
+                    <a><img className='linkedin' src= {linkedin} alt=" "/></a>
+                    <div className='centrar'><p> Back-End</p></div>
+                  </div>
                 </div>
-              </div>
+              
               <div className = "Uma">
-                <p className='Nombre'> Uma<br></br>Grün </p>
-                <div className = "Info"> 
-                  <button>L</button>
-                  <p>  UX/UI Designer  </p>
-                </div>
+              <p className='Nombre'> Uma<br></br>Grün </p>
+                  <div className = "info">
+                    <a><img className='linkedin' src= {linkedin} alt=" "/></a>
+                    <div className='centrar'><p> UX/UI Designer</p></div>
+                  </div>
               </div>
       </div>
 

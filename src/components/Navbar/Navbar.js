@@ -33,9 +33,7 @@ return(
           <a className="Seccion" href="#Rexat">Rexat</a>
           <a className="Seccion" href="#Conocenos">Conocenos</a>
           <a className="Seccion" href="#titulo">Mapa</a>
-          <button /* variant="outlined" */ onClick={handleClickOpenInicio}>
-            Ingresar
-        </button>
+          <a className="Iniciar-sesion" onClick={handleClickOpenInicio}>Ingresar</a>
         <Dialog
             open={open}
             TransitionComponent={Transition}
