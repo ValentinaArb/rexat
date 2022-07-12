@@ -1,28 +1,36 @@
-.a-Mapa  {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 25%;
-    background-color: white;
-    position: fixed;
-    height: 100%;
-    overflow: auto;        
-    z-index: 1;
-  }
-  
-  .li-Mapa .a-Mapa {
-    display: block;
-    color: #000;
-    padding: 8px 6px;
-    text-decoration: none;
-  }
-  
-  .li-Mapa .a-mapa.active {
-    background-color: #04AA6D;
-    color: white;
-  }
-  
-  .li-Mapa .a-Mapa:hover:not(.active) {
-    background-color: #04AA6D;
-    color: white;
-  }
+/* .a-Mapa  {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  background-color: white;
+  position: fixed;
+  height: 100%;
+  overflow: auto;        
+  z-index: 1;
+}
+
+.li-Mapa .a-Mapa {
+  display: block;
+  color: #000;
+  padding: 8px 6px;
+  text-decoration: none;
+}
+
+.li-Mapa .a-mapa.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.li-Mapa .a-Mapa:hover:not(.active) {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.volver{
+  display: inline-flex;
+} */
+
+.Sidebar{
+  background-color: #3A5A40;
+}

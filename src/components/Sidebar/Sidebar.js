@@ -1,40 +1,72 @@
 import React from "react";
-import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
-import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import "./Sidebar.css";
+import SideNav, {NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import AddIcon from '@mui/icons-material/Add';
+import ImportContactsOutlinedIcon from '@mui/icons-material/ImportContactsOutlined';
+import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
+import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import {Link} from "react-router-dom";
-import Main from "../Main/Main"
 
-export default function Sidebar(){  
+export default function Sidebar(){
     return(
+        <>
+        <SideNav className="Sidebar">
+            <SideNav.Toggle/>
+                <SideNav.Nav>
+                    <NavItem eventKey="añadir-punto">
+                        <NavIcon>
+                            <AddIcon/>
+                            <i className="Sidebar-btn-contactanos" style={{ fontSize: '1.75em' }} />
+                        </NavIcon>
+                        <NavText>
+                            Añadir punto
+                        </NavText>
+                    </NavItem>
+                    <NavItem eventKey="telefonos">
+                        <NavIcon>
+                            <ImportContactsOutlinedIcon className = "Telefonos"/>
+                            <i className="Sidebar-btn-contactanos" style={{ fontSize: '1.75em' }} />
+                        </NavIcon>
+                        <NavText>
+                            Telefonos y contactos
+                        </NavText>
+                    </NavItem>
 
-<SideNav>
-    <SideNav.Toggle />
-        <SideNav.Nav>
-            <NavItem eventKey="volver">              
-                <NavIcon>     
-                    <Link to = "/">                                        
-                        <HomeOutlinedIcon className = "BtnMapa"/>
-                        <i className="Sidebar-btn-volver" style={{ fontSize: '1.75em' }} />                    
-                    </Link> 
-                </NavIcon>               
-                <NavText>
-                    Volver
-                </NavText>
-            </NavItem>            
-        </SideNav.Nav>
-    <SideNav.Nav>        
-        <NavItem eventKey="contactanos ">
-            <NavIcon>                   
-                <HomeOutlinedIcon className = "BtnMapa"/>
-                <i className="Sidebar-btn-contactanos" style={{ fontSize: '1.75em' }} />              
-            </NavIcon>
-            <NavText>
-                Contactanos
-            </NavText>
-        </NavItem>            
-    </SideNav.Nav>
-</SideNav>
+                    <NavItem eventKey="Contactanos">
+                        <NavIcon>
+                                <PersonOutlineOutlinedIcon/>
+                                <i className="Sidebar-btn-volver" style={{ fontSize: '1.75em' }} />
+                        </NavIcon>
+                        <NavText>
+                            Contactanos
+                        </NavText>
+                    </NavItem>
+
+                    <NavItem eventKey="Preguntas">
+                        <NavIcon>
+                                <HelpOutlineOutlinedIcon/>
+                                <i className="Sidebar-btn-volver" style={{ fontSize: '1.75em' }} />
+                        </NavIcon>
+                        <NavText>
+                            Preguntas frecuentes
+                        </NavText>
+                    </NavItem>
+
+                    <NavItem eventKey="volver">
+                        <NavIcon className="volver">
+                            <Link to = "/">
+                                <HomeOutlinedIcon className="volver"/>
+                                <i className="Sidebar-btn-volver" style={{ fontSize: '1.75em' }} />
+                            </Link>
+                        </NavIcon>
+                        <NavText className="volver">
+                            Volver
+                        </NavText>
+                    </NavItem>
+                </SideNav.Nav>
+        </SideNav>
+    </>
     );
 }
