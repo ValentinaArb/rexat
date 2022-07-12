@@ -1,15 +1,14 @@
 import React, { useRef, useEffect, useState } from 'react';
-import "./Main.css"
-import basura from "../img/basura.png"
-import logo from "../img/logoRXT.png"
-import planeta from "../img/planeta.png"
+import "./Main.css";
+import "aos/dist/aos.css";
+import basura from "../../img/basura.png";
+import logo from "../../img/logoRXT.png";
+import planeta from "../../img/planeta.png";
+import separador from "../../img/separador.png";
 import {Link} from "react-router-dom";
-import separador from "../img/separador.png"
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 import Aos from "aos";
-import "aos/dist/aos.css";
-import Navbar from "./Navbar/Navbar"
-import Scroll from "../components/Scroll";
+import Navbar from "../Navbar/Navbar";
 
 mapboxgl.accessToken = 'pk.eyJ1IjoidW1ncnUiLCJhIjoiY2w0bzd5aHc3MDR5ZzNkbGx5bzh0bWZ3YiJ9.1m8NjPzeitlkvyR7UsQzLQ';
 
@@ -33,26 +32,15 @@ export default function Main() {
       zoom: zoom
     }); 
   }); */
-      const [open, setOpen] = React.useState(false);
-
-      const handleClickOpen = () => {
-        setOpen(true);
-      };
-
-      const handleClose = () => {
-        setOpen(false);
-      };
-      
+  
   return (   
     <>
      <Navbar/>
     <div data-aos="fade-up" className="Inicio">
       <div data-aos="fade-up" id= "Parte1">
         <div className="Text">
-        <div className = "Hola"> Hola, <br></br> Somos <b><span style={{ color: "#ff951c" }}>Rexat</span> </b></div>        
-         {/*  <Link to = "/mapview"> <button className = "BtnNaranja">Ir al mapa 1</button> </Link> */}
+        <div className = "Hola"> Hola, <br></br> Somos <b><span style={{ color: "#ff951c" }}>Rexat</span> </b></div>
           <Link to = "/mapview"> <button className = "BtnNaranja">Ir al mapa 1</button> </Link>
-          <Link to = "/mapview2"> <button className = "BtnNaranja">Ir al mapa 2</button> </Link>
         </div>
         <img className='basura' src= {basura} alt=" "/>
       </div>
