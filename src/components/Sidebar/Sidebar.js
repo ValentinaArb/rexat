@@ -7,7 +7,7 @@ import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
-import {Link} from "react-router-dom";
+import logo from "../../img/logoRXT.png"
 
 export default function Sidebar(){
     return(
@@ -37,7 +37,7 @@ export default function Sidebar(){
                     <NavItem eventKey="Contactanos">
                         <NavIcon>
                                 <PersonOutlineOutlinedIcon/>
-                                <i className="Sidebar-btn-volver" style={{ fontSize: '1.75em' }} />
+                                <i className="Sidebar-btn" style={{ fontSize: '1.75em' }} />
                         </NavIcon>
                         <NavText>
                             Contactanos
@@ -47,25 +47,27 @@ export default function Sidebar(){
                     <NavItem eventKey="Preguntas">
                         <NavIcon>
                                 <HelpOutlineOutlinedIcon/>
-                                <i className="Sidebar-btn-volver" style={{ fontSize: '1.75em' }} />
+                                <i className="Sidebar-btn" style={{ fontSize: '1.75em' }} />
                         </NavIcon>
                         <NavText>
                             Preguntas frecuentes
                         </NavText>
                     </NavItem>
 
-                    <NavItem eventKey="volver">
-                        <NavIcon className="volver">
-                            <Link to = "/">
-                                <HomeOutlinedIcon className="volver"/>
-                                <i className="Sidebar-btn-volver" style={{ fontSize: '1.75em' }} />
-                            </Link>
+                    <NavItem eventKey="Volver">
+                        <NavIcon>
+                                <HomeOutlinedIcon/>
+                                <i className="Sidebar-btn" style={{ fontSize: '1.75em' }} />
                         </NavIcon>
-                        <NavText className="volver">
-                            Volver
+                        <NavText>
+                            Preguntas frecuentes
                         </NavText>
                     </NavItem>
+
+                    <div className = "centrar"><img className="logo-Sidebar" src= {logo} alt=" "></img></div>
+
                 </SideNav.Nav>
+                
         </SideNav>
     </>
     );

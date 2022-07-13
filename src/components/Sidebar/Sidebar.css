@@ -33,3 +33,12 @@
 .volver{
   display: inline-flex;
 } */
+
+.logo-Sidebar{
+  width: 30%;
+  display: inline;
+}
+
+.centrar{
+  display: flex; justify-content: center;
+}
