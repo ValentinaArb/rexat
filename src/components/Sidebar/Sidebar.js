@@ -36,8 +36,8 @@ export default function Sidebar(){
 
                     <NavItem eventKey="Contactanos">
                         <NavIcon>
-                                <PersonOutlineOutlinedIcon/>
-                                <i className="Sidebar-btn" style={{ fontSize: '1.75em' }} />
+                            <PersonOutlineOutlinedIcon/>
+                            <i className="Sidebar-btn" style={{ fontSize: '1.75em' }} />
                         </NavIcon>
                         <NavText>
                             Contactanos
@@ -46,28 +46,37 @@ export default function Sidebar(){
 
                     <NavItem eventKey="Preguntas">
                         <NavIcon>
-                                <HelpOutlineOutlinedIcon/>
-                                <i className="Sidebar-btn" style={{ fontSize: '1.75em' }} />
+                            <HelpOutlineOutlinedIcon/>
+                            <i className="Sidebar-btn" style={{ fontSize: '1.75em' }} />
                         </NavIcon>
                         <NavText>
                             Preguntas frecuentes
                         </NavText>
                     </NavItem>
 
-                    <NavItem eventKey="Volver">
+                    <NavItem eventKey="Volver" >
                         <NavIcon>
-                                <HomeOutlinedIcon/>
-                                <i className="Sidebar-btn" style={{ fontSize: '1.75em' }} />
+                            <HomeOutlinedIcon/>
+                            <i className="Sidebar-btn" style={{ fontSize: '1.75em' }} />
                         </NavIcon>
                         <NavText>
-                            Preguntas frecuentes
+                            Volver
+                        </NavText>                        
+                    </NavItem>
+                       
+                    <NavItem className="logo-Sidebar">
+                        <NavIcon>
+                            <img className="logo" src= {logo} alt=" "></img>
+                        </NavIcon>
+                        <NavText>
+                            <p className="frase-Sidebar">Reducir,</p>
+                            <p className="frase-Sidebar">Reutilizar,</p>
+                            <p className="frase-Sidebar">Reciclar,</p>
+                            <p className="frase-Sidebar">Recuperar ,</p>
+                            <p className="frase-Sidebar">Rexat.</p>
                         </NavText>
                     </NavItem>
-
-                    <div className = "centrar"><img className="logo-Sidebar" src= {logo} alt=" "></img></div>
-
-                </SideNav.Nav>
-                
+                </SideNav.Nav>                
         </SideNav>
     </>
     );
