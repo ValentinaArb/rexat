@@ -35,17 +35,14 @@
 } */
 
 .logo-Sidebar{
-  margin-left: 10px;
   width: 30%;
-  margin-top: 20rem;
+  display: inline;
 }
-
 .centrar{
-  display: flex; justify-content: center;
+  display: flex; justify-content: center; align-items: center;
 }
 
 .frase-Sidebar{
   font-size: 15px;
-  display: block;
-  margin: 0;
+  display: inline;
 }

@@ -56,12 +56,12 @@ export default function Main() {
       <div /* data-aos="fade-up" */ className='centrar'><img className='separador' src= {separador} alt=" "/></div>
        <h1 /* data-aos="fade-up" */ id="Rexat"> ¿Qué es Rexat?</h1>
       <div className="Grid1">        
-              <div /* data-aos="fade-up" */ className= "QuienesSomos">
+              <div /* data-aos="fade-up"  */className= "QuienesSomos">
                 <h1> ¿Quiénes somos?</h1>
                 <p>Somos un grupo de estudiantes de 5to año en ORT Argentina. Creamos Rexat, una plataforma que mediante imagenes satelitales permite reconocer grandes acumulaciones de basura marina en las costas , con el fin de ayudar al medio ambiente. </p>
               </div>
-              <div /* data-aos="fade-up"  */className ="Conocenosimg"> IMAGEN </div>      
-              <div /* data-aos="fade-up" */ className ="Conocenosimg"> IMAGEN </div>            
+              <div /* data-aos="fade-up"  */className ="Conocenosimg"> IMAGEN </div>   
+              <div /* data-aos="fade-up" */ className ="Conocenosimg"> IMAGEN </div>
               <div /* data-aos="fade-up" */ className= "Finalidad">
                 <h1 /* data-aos="fade-up" */>Nuestra Finalidad</h1>
                 <p /* data-aos="fade-up" */>Buscamos concientizar y crear una plataforma de libre acceso para que cualquier persona que quiera participar en la limpieza de las costas: una gran necesidad ambiental de hoy en día.</p>
@@ -96,7 +96,6 @@ export default function Main() {
                     <div className='centrar'><p> Back-End</p></div>
                   </div>
                 </div>
-              
               <div className = "Uma">
               <p className='Nombre'> Uma<br></br>Grün </p>
                   <div className = "info">
@@ -109,7 +108,7 @@ export default function Main() {
       <div /* data-aos="fade-up"*/ className='centrar'><img className='separador' src= {separador} alt=" "/></div>
       <div /* data-aos="fade-up" */ className='centrar'><h1 id='titulo'>Acceder al mapa</h1></div>
       <div /* data-aos="fade-up" */ className='centrar'><Link to = "/mapview"> <img className= "planeta" src= {planeta} alt=" "/></Link></div>  
-        
+
      {/* <div ref={mapContainer} className="map-container" /> */}
     </div>
       <footer className='footer'>Rexat - 2022</footer>     

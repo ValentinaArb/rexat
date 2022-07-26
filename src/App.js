@@ -10,6 +10,7 @@ export default function App() {
        <Routes> 
          <Route path="/" element={<Main/>}/>
          <Route path="/mapview" element={<MapView/>}/>
+         <Route path="/map" element={<MapView/>}/>
        </Routes>
      </BrowserRouter>
       </>       

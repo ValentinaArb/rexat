@@ -8,6 +8,7 @@ import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import logo from "../../img/logoRXT.png"
+import {Link} from "react-router-dom";
 
 export default function Sidebar(){
     return(
@@ -54,10 +55,14 @@ export default function Sidebar(){
                         </NavText>
                     </NavItem>
 
-                    <NavItem eventKey="Volver" >
+                     <NavItem eventKey="Volver">
+                    
                         <NavIcon>
-                            <HomeOutlinedIcon/>
-                            <i className="Sidebar-btn" style={{ fontSize: '1.75em' }} />
+                            <Link to = "/">
+                                    <HomeOutlinedIcon/>
+                                    <i className="Sidebar-btn-volver" style={{ fontSize: '1.75em' }} />
+                            </Link>
+                       
                         </NavIcon>
                         <NavText>
                             Volver
@@ -69,14 +74,11 @@ export default function Sidebar(){
                             <img className="logo" src= {logo} alt=" "></img>
                         </NavIcon>
                         <NavText>
-                            <p className="frase-Sidebar">Reducir,</p>
-                            <p className="frase-Sidebar">Reutilizar,</p>
-                            <p className="frase-Sidebar">Reciclar,</p>
-                            <p className="frase-Sidebar">Recuperar ,</p>
-                            <p className="frase-Sidebar">Rexat.</p>
+                            Rexat.
                         </NavText>
                     </NavItem>
-                </SideNav.Nav>                
+                </SideNav.Nav>   
+                             
         </SideNav>
     </>
     );

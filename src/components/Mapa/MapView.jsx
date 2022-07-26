@@ -39,4 +39,4 @@ return (
     <div className="sidebar"> Longitude: {lng} | Latitude: {lat} | Zoom: {zoom} </div>
   </>
   );
-}
+} 
