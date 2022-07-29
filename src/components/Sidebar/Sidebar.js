@@ -9,8 +9,48 @@ import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import logo from "../../img/logoRXT.png"
 import {Link} from "react-router-dom";
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import TextField from '@mui/material/TextField';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import Slide from '@mui/material/Slide';
 
-export default function Sidebar(){
+const Transition = React.forwardRef(function Transition(props, ref) {
+    return <Slide direction="up" ref={ref} {...props} />;
+  });
+
+export default function Navbar(){
+    const [openInicio, setOpenInicio] = React.useState(false);
+  
+        const handleClickOpenInicio = () => {
+          setOpenInicio(true);
+        };
+  
+        const handleCloseInicio = () => {
+          setOpenInicio(false);
+        };
+    const [openTelefonos, setOpenTelefonos] = React.useState(false);
+        const handleClickOpenTelefonos = () => {
+            setOpenTelefonos(true);
+          };
+    
+          const handleCloseTelefonos = () => {
+            setOpenTelefonos(false);
+          };
+    
+    const [openPreguntas, setOpenPreguntas] = React.useState(false);
+        const handleClickOpenPreguntas = () => {
+            setOpenPreguntas(true);
+          };
+    
+          const handleClosePreguntas = () => {
+            setOpenPreguntas(false);
+          };
+
+
     return(
         <>
         <SideNav id="Sidebar">
@@ -22,20 +62,74 @@ export default function Sidebar(){
                             <i className="Sidebar-btn-contactanos" style={{ fontSize: '1.75em' }} />
                         </NavIcon>
                         <NavText>
-                            Añadir punto
+                        <p onClick={handleClickOpenInicio}>Ingresar</p>
+                            <Dialog
+                                open={openInicio}
+                                TransitionComponent={Transition}
+                                keepMounted
+                                onClose={handleCloseInicio}
+                                aria-describedby="alert-dialog-slide-description"
+                            >
+                                <DialogTitle className = "centrar">{"INICIAR SESIÓN"}</DialogTitle>
+                                <DialogContent>
+                                    <TextField className='input'
+                                    autoFocus
+                                    margin="dense"
+                                    id="name"
+                                    label="Email Address"
+                                    type="email"
+                                    fullWidth
+                                    variant="standard"
+                                    />
+                                    <TextField className='input'
+                                    name="password"
+                                    type="password"
+                                    placeholder="password"
+                                    label="Password"
+                                    fullWidth
+                                    variant="standard"
+                                    />
+                                </DialogContent>    
+                                <DialogContentText>
+                                    <a className = "" href="/Registrarse">Registrarme</a>
+                                </DialogContentText>        
+                                <DialogActions>
+                                <Button onClick={handleCloseInicio}>CANCELAR</Button>
+                                <Button onClick={handleCloseInicio}>CONTINUAR</Button>
+                                </DialogActions>
+                            </Dialog>      
                         </NavText>
                     </NavItem>
                     <NavItem eventKey="telefonos">
                         <NavIcon>
-                            <ImportContactsOutlinedIcon className = "Telefonos"/>
+                            <ImportContactsOutlinedIcon/>
                             <i className="Sidebar-btn-contactanos" style={{ fontSize: '1.75em' }} />
                         </NavIcon>
                         <NavText>
-                            Telefonos y contactos
+                        <p onClick={handleClickOpenTelefonos}> Telefonos y contactos</p>
+                            <Dialog
+                                open={openTelefonos}
+                                TransitionComponent={Transition}
+                                keepMounted
+                                onClose={handleCloseTelefonos}
+                                aria-describedby="alert-dialog-slide-description"
+                            >
+                                <DialogTitle className = "centrar">{"Telefonos y contactos"}</DialogTitle>
+                                <DialogContent>
+                                    <DialogContentText id="alert-dialog-description">
+                                        <p className="Contacto"> Municipo de San Isidro: </p>
+                                        <p className="Contacto"> Gobierno de la ciudad de Bs As: </p>
+                                        <p className="Contacto"> AMBA: </p>
+                                    </DialogContentText>
+                                </DialogContent>     
+                                <DialogActions>
+                                <Button onClick={handleCloseTelefonos}>Ok</Button>
+                                </DialogActions>
+                            </Dialog>    
                         </NavText>
                     </NavItem>
 
-                    <NavItem eventKey="Contactanos">
+                    {/* <NavItem eventKey="Contactanos">
                         <NavIcon>
                             <PersonOutlineOutlinedIcon/>
                             <i className="Sidebar-btn" style={{ fontSize: '1.75em' }} />
@@ -43,7 +137,7 @@ export default function Sidebar(){
                         <NavText>
                             Contactanos
                         </NavText>
-                    </NavItem>
+                    </NavItem> */}
 
                     <NavItem eventKey="Preguntas">
                         <NavIcon>
@@ -51,7 +145,32 @@ export default function Sidebar(){
                             <i className="Sidebar-btn" style={{ fontSize: '1.75em' }} />
                         </NavIcon>
                         <NavText>
-                            Preguntas frecuentes
+                        <p onClick={handleClickOpenPreguntas}> Preguntas frecuentes</p>
+                            <Dialog
+                                open={openPreguntas}
+                                TransitionComponent={Transition}
+                                keepMounted
+                                onClose={handleClosePreguntas}
+                                aria-describedby="alert-dialog-slide-description"
+                            >
+                                <DialogTitle className = "centrar">{"Preguntas frecuentes sobre el funcionamiento del mapa:"}</DialogTitle>
+                                <DialogContent>
+                                    <DialogContentText id="alert-dialog-description">
+                                        <h4 className="Titulo-pregunta"> ¿Cómo puedo contribuir a la limpieza de las costas? </h4>
+                                        <p className="Respuesta"> Hay que tener concincia de lo que consumimos y como lo consumimos. También es importante no dejar residuos en el piso ni en un lugar donde se puedan volar. </p>
+                                        <h4 className="Titulo-pregunta"> ¿Cómo se utiliza el mapa? </h4>
+                                        <p className="Respuesta"> El uso del mapa es simple. Si presionas un punto, vas a poder ver su localizacion. En la barra de herramientas podrás ingresar un punto, encontrar telefonos útiles o volver al inicio.
+                                        Para cualquier otra cualquier consulta: Rexat.proyecto@gmail.com </p>
+                                        <h4 className="Titulo-pregunta"> Recomendaciones a la hora de ir a limpiar costas</h4>
+                                        <p className="Respuesta"> Recomendamos usar guantes de cocina, botas y ropa cómoda que se pueda ensuciar. Además, es importante llevar 2 bolsas: 1 para separar reciclables y la otra para basura.
+                                        <br></br>Para más imfomación respecto a la separación de reciclables y basura: 
+                                        <a className = "" href="https://www.buenosaires.gob.ar/gobierno/basura-vs-reciclable" target= "_blank" > https://www.buenosaires.gob.ar/gobierno/basura-vs-reciclable</a> </p>
+                                    </DialogContentText>
+                                </DialogContent>     
+                                <DialogActions>
+                                <Button onClick={handleClosePreguntas}>Ok</Button>
+                                </DialogActions>
+                            </Dialog>   
                         </NavText>
                     </NavItem>
 
@@ -59,8 +178,8 @@ export default function Sidebar(){
                     
                         <NavIcon>
                             <Link to = "/">
-                                    <HomeOutlinedIcon/>
-                                    <i className="Sidebar-btn-volver" style={{ fontSize: '1.75em' }} />
+                                <HomeOutlinedIcon/>
+                                <i className="Sidebar-btn-volver" style={{ fontSize: '1.75em' }} />
                             </Link>
                        
                         </NavIcon>
@@ -77,6 +196,15 @@ export default function Sidebar(){
                             Rexat.
                         </NavText>
                     </NavItem>
+
+                    <NavItem className="Mail">
+                        <NavIcon>
+                        </NavIcon>
+                        <NavText>
+                            Rexat.proyecto@gmail.com
+                        </NavText>
+                    </NavItem>
+                    
                 </SideNav.Nav>   
                              
         </SideNav>

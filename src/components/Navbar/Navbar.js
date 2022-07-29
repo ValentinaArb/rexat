@@ -33,7 +33,7 @@ return(
           <a className="Seccion" href="#Rexat">Rexat</a>
           <a className="Seccion" href="#Conocenos">Conocenos</a>
           <a className="Seccion" href="#titulo">Mapa</a>
-          <a className="Iniciar-sesion" onClick={handleClickOpenInicio}>Ingresar</a>
+          {/* <a className="Iniciar-sesion" onClick={handleClickOpenInicio}>Ingresar</a> 
         <Dialog
             open={open}
             TransitionComponent={Transition}
@@ -106,7 +106,7 @@ return(
              <Button onClick={handleCloseRegistro}>CANCELAR</Button>
              <Button onClick={handleCloseRegistro}>CONTINUAR</Button>
           </DialogActions>
-      </Dialog>    */}
+      </Dialog */}
       </li>
     </ul>
   </nav>

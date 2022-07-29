@@ -12,28 +12,7 @@ import Navbar from "../Navbar/Navbar";
 
 mapboxgl.accessToken = 'pk.eyJ1IjoidW1ncnUiLCJhIjoiY2w0bzd5aHc3MDR5ZzNkbGx5bzh0bWZ3YiJ9.1m8NjPzeitlkvyR7UsQzLQ';
 
-export default function Main() {
-   /*  
-    const mapContainer = useRef(null);
-    const map = useRef(null);
-    const [lng, setLng] = useState(-58.45400186608953 );
-    const [lat, setLat] = useState(-34.549207371406716);
-    const [zoom, setZoom] = useState(1);
-   
-    useEffect(()=> {
-      Aos.init({duration: 3000});
-    }, []);
-
-   useEffect(() => {
-    if (map.current) return;
-    map.current = new mapboxgl.Map({
-      container: mapContainer.current,
-      style: 'mapbox://styles/umgru/cl53gtdyf000614pmr05mcd1u',
-      center: [lng, lat],
-      zoom: zoom
-    }); 
-  }); */
-  
+export default function Main() {  
   return (   
     <>    
     <Navbar/>
@@ -109,7 +88,6 @@ export default function Main() {
       <div /* data-aos="fade-up" */ className='centrar'><h1 id='titulo'>Acceder al mapa</h1></div>
       <div /* data-aos="fade-up" */ className='centrar'><Link to = "/mapview"> <img className= "planeta" src= {planeta} alt=" "/></Link></div>  
 
-     {/* <div ref={mapContainer} className="map-container" /> */}
     </div>
       <footer className='footer'>Rexat - 2022</footer>     
     </>    

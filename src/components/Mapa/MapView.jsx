@@ -1,84 +1,9 @@
-import React, { useRef, useEffect, useState } from 'react';
+/* import React, { useRef, useEffect, useState } from 'react';
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 import "./MapView.css"
 import Sidebar from "../Sidebar/Sidebar"
-import "leaflet/dist/leaflet.css";
 
 mapboxgl.accessToken = 'pk.eyJ1IjoidW1ncnUiLCJhIjoiY2w0bzd5aHc3MDR5ZzNkbGx5bzh0bWZ3YiJ9.1m8NjPzeitlkvyR7UsQzLQ';
-
-export default function MapView() {
-  const mapContainer = useRef(null);
-  const map = useRef(null);
-  const [lng, setLng] = useState(-58.45400186608953 );
-  const [lat, setLat] = useState(-34.549207371406716);
-  const [zoom, setZoom] = useState(11);
- 
-useEffect(() => {
-    if (map.current) return;
-    map.current = new mapboxgl.Map({
-      container: mapContainer.current,
-      style: 'mapbox://styles/umgru/cl53gtdyf000614pmr05mcd1u',
-      center: [lng, lat],
-      zoom: zoom
-    });
-  });
-
-useEffect(() => {
-  if (!map.current) return;
-    map.current.on('move', () => {
-    setLng(map.current.getCenter().lng.toFixed(4));
-    setLat(map.current.getCenter().lat.toFixed(4));
-    setZoom(map.current.getZoom().toFixed(2));
-  });
-});
-
-return (  
-  <>
-    {<Sidebar/>}
-    <div ref={mapContainer} className="map-container" />      
-    <div className="sidebar"> Longitude: {lng} | Latitude: {lat} | Zoom: {zoom} </div>
-  </>
-  );
-}
-
-
-
-/* HTML
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Create a draggable point</title>
-<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-<link href="https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.css" rel="stylesheet">
-<script src="https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js"></script>
-<style>
-body { margin: 0; padding: 0; }
-#map { position: absolute; top: 0; bottom: 0; width: 100%; }
-</style>
-</head>
-<body>
-<style>
-    .coordinates {
-        background: rgba(0, 0, 0, 0.5);
-        color: #fff;
-        position: absolute;
-        bottom: 40px;
-        left: 10px;
-        padding: 5px 10px;
-        margin: 0;
-        font-size: 11px;
-        line-height: 18px;
-        border-radius: 3px;
-        display: none;
-    }
-</style>
-
-<div id="map"></div>
-<pre id="coordinates" class="coordinates"></pre>
-
-<script>
-	mapboxgl.accessToken = 'pk.eyJ1IjoidW1ncnUiLCJhIjoiY2w0bzd5aHc3MDR5ZzNkbGx5bzh0bWZ3YiJ9.1m8NjPzeitlkvyR7UsQzLQ';
     const coordinates = document.getElementById('coordinates');
     const map = new mapboxgl.Map({
         container: 'map',
@@ -177,7 +102,50 @@ body { margin: 0; padding: 0; }
             map.once('touchend', onUp);
         });
     });
-</script>
 
-</body>
-</html> */
+
+
+ */
+
+    import React, { useRef, useEffect, useState } from 'react';
+import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
+import "./MapView.css"
+import Sidebar from "../Sidebar/Sidebar"
+import "leaflet/dist/leaflet.css";
+
+mapboxgl.accessToken = 'pk.eyJ1IjoidW1ncnUiLCJhIjoiY2w0bzd5aHc3MDR5ZzNkbGx5bzh0bWZ3YiJ9.1m8NjPzeitlkvyR7UsQzLQ';
+
+export default function MapView() {
+  const mapContainer = useRef(null);
+  const map = useRef(null);
+  const [lng, setLng] = useState(-58.45400186608953 );
+  const [lat, setLat] = useState(-34.549207371406716);
+  const [zoom, setZoom] = useState(11);
+ 
+useEffect(() => {
+    if (map.current) return;
+    map.current = new mapboxgl.Map({
+      container: mapContainer.current,
+      style: 'mapbox://styles/umgru/cl53gtdyf000614pmr05mcd1u',
+      center: [lng, lat],
+      zoom: zoom
+    });
+  });
+
+useEffect(() => {
+  if (!map.current) return;
+    map.current.on('move', () => {
+    setLng(map.current.getCenter().lng.toFixed(4));
+    setLat(map.current.getCenter().lat.toFixed(4));
+    setZoom(map.current.getZoom().toFixed(2));
+  });
+});
+
+return (  
+  <>
+    {<Sidebar/>}
+    <div ref={mapContainer} className="map-container" />      
+    <div className="sidebar"> Longitude: {lng} | Latitude: {lat} | Zoom: {zoom} </div>
+  </>
+  );
+}
