@@ -3,7 +3,7 @@ import "./Sidebar.css";
 import SideNav, {NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import AddIcon from '@mui/icons-material/Add';
 import ImportContactsOutlinedIcon from '@mui/icons-material/ImportContactsOutlined';
-import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
+/* import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined'; */
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
@@ -17,6 +17,16 @@ import TextField from '@mui/material/TextField';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Slide from '@mui/material/Slide';
+import ListItemText from '@mui/material/ListItemText';
+import ListItem from '@mui/material/ListItem';
+import List from '@mui/material/List';
+import Divider from '@mui/material/Divider';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import CloseIcon from '@mui/icons-material/Close';
+import DraggableMark  from "../Pruebas/draggable_mark";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
@@ -50,7 +60,16 @@ export default function Navbar(){
             setOpenPreguntas(false);
           };
 
+    const [openDraggableMark, setOpenDraggableMark] = React.useState(false);
+          const handleClickOpenDraggableMark = () => {
+              setOpenDraggableMark(true);
+            };
+      
+            const handleCloseDraggableMark = () => {
+              setOpenDraggableMark(false);
+            };
 
+          
     return(
         <>
         <SideNav id="Sidebar">
@@ -70,7 +89,7 @@ export default function Navbar(){
                                 onClose={handleCloseInicio}
                                 aria-describedby="alert-dialog-slide-description"
                             >
-                                <DialogTitle className = "centrar">{"INICIAR SESIÓN"}</DialogTitle>
+                                <DialogTitle className = "Titulo">{"INICIAR SESIÓN"}</DialogTitle>
                                 <DialogContent>
                                     <TextField className='input'
                                     autoFocus
@@ -114,7 +133,7 @@ export default function Navbar(){
                                 onClose={handleCloseTelefonos}
                                 aria-describedby="alert-dialog-slide-description"
                             >
-                                <DialogTitle className = "centrar">{"Telefonos y contactos"}</DialogTitle>
+                                <DialogTitle className = "Titulo">{"Telefonos y contactos"}</DialogTitle>
                                 <DialogContent>
                                     <DialogContentText id="alert-dialog-description">
                                         <p className="Contacto"> Municipo de San Isidro: </p>
@@ -128,16 +147,6 @@ export default function Navbar(){
                             </Dialog>    
                         </NavText>
                     </NavItem>
-
-                    {/* <NavItem eventKey="Contactanos">
-                        <NavIcon>
-                            <PersonOutlineOutlinedIcon/>
-                            <i className="Sidebar-btn" style={{ fontSize: '1.75em' }} />
-                        </NavIcon>
-                        <NavText>
-                            Contactanos
-                        </NavText>
-                    </NavItem> */}
 
                     <NavItem eventKey="Preguntas">
                         <NavIcon>
@@ -153,7 +162,7 @@ export default function Navbar(){
                                 onClose={handleClosePreguntas}
                                 aria-describedby="alert-dialog-slide-description"
                             >
-                                <DialogTitle className = "centrar">{"Preguntas frecuentes sobre el funcionamiento del mapa:"}</DialogTitle>
+                                <DialogTitle className = "Titulo">{"Preguntas frecuentes sobre el funcionamiento del mapa:"}</DialogTitle>
                                 <DialogContent>
                                     <DialogContentText id="alert-dialog-description">
                                         <h4 className="Titulo-pregunta"> ¿Cómo puedo contribuir a la limpieza de las costas? </h4>
@@ -164,7 +173,7 @@ export default function Navbar(){
                                         <h4 className="Titulo-pregunta"> Recomendaciones a la hora de ir a limpiar costas</h4>
                                         <p className="Respuesta"> Recomendamos usar guantes de cocina, botas y ropa cómoda que se pueda ensuciar. Además, es importante llevar 2 bolsas: 1 para separar reciclables y la otra para basura.
                                         <br></br>Para más imfomación respecto a la separación de reciclables y basura: 
-                                        <a className = "" href="https://www.buenosaires.gob.ar/gobierno/basura-vs-reciclable" target= "_blank" > https://www.buenosaires.gob.ar/gobierno/basura-vs-reciclable</a> </p>
+                                        <a target = "_blank" rel= "noreferrer" href="https://www.buenosaires.gob.ar/gobierno/basura-vs-reciclable" > https://www.buenosaires.gob.ar/gobierno/basura-vs-reciclable</a> </p>
                                     </DialogContentText>
                                 </DialogContent>     
                                 <DialogActions>
@@ -187,24 +196,52 @@ export default function Navbar(){
                             Volver
                         </NavText>                        
                     </NavItem>
-                       
+                                          
                     <NavItem className="logo-Sidebar">
                         <NavIcon>
                             <img className="logo" src= {logo} alt=" "></img>
                         </NavIcon>
                         <NavText>
-                            Rexat.
-                        </NavText>
-                    </NavItem>
-
-                    <NavItem className="Mail">
-                        <NavIcon>
-                        </NavIcon>
-                        <NavText>
                             Rexat.proyecto@gmail.com
                         </NavText>
                     </NavItem>
-                    
+
+                    <NavItem className="logo-Sidebar">
+                        <NavText>
+                        <p onClick={handleClickOpenDraggableMark}> Draggable mark</p>
+
+                            <Dialog
+                                fullScreen
+                                open={openDraggableMark}
+                                onClose={handleCloseDraggableMark}
+                                TransitionComponent={Transition}
+                            >
+                                <AppBar sx={{ position: 'relative' }}>
+                                <Toolbar>
+                                    <IconButton
+                                    edge="start"
+                                    color="inherit"
+                                    onClick={handleCloseDraggableMark}
+                                    aria-label="close"
+                                    >
+                                    <CloseIcon />
+                                    </IconButton>
+                                    <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
+                                    Agregar punto
+                                    </Typography>
+                                    <Button autoFocus color="inherit" onClick={handleCloseDraggableMark}>
+                                    Agregar
+                                    </Button>
+                                </Toolbar>
+                                </AppBar>
+
+                                <h1>Hola</h1>
+                                <DraggableMark/>
+
+                            </Dialog>
+                        </NavText>
+                    </NavItem>
+       
                 </SideNav.Nav>   
                              
         </SideNav>
