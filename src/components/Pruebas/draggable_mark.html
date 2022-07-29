@@ -18,7 +18,7 @@
     
     export default function DraggableMark() {
     const coordinates = document.getElementById('coordinates');
-    const map = new mapboxgl.Map({
+    const MAPA = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
         center: [0, 0],
@@ -29,7 +29,7 @@
         draggable: true
     })
         .setLngLat([0, 0])
-        .addTo(map);
+        .addTo(MAPA);
        
  
     function onDragEnd() {

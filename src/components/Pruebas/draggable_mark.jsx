@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+/* import React, { useRef, useEffect, useState } from 'react';
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 import "./draggable_mark.css"
 import "leaflet/dist/leaflet.css";
@@ -21,8 +21,8 @@ export default function DraggableMark() {
           zoom: zoom
         });
       });       
-    
-      /* const canvas = map.getCanvasContainer();
+} */
+     /*  const canvas = map.getCanvasContainer();
       const geojson = {
           'type': 'FeatureCollection',
           'features': [
@@ -99,7 +99,7 @@ export default function DraggableMark() {
             map.on('touchmove', onMove);
             map.once('touchend', onUp);
         });
-    });  */
+    });  
       
     return (  
       <>
@@ -108,3 +108,168 @@ export default function DraggableMark() {
       </>
       );
     }
+    
+    import React, { useRef, useState, useMemo, useCallback, Marker, Popup,render, MapContainer,TileLayer } from 'react';
+    import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
+    import "./draggable_mark.css"
+    import "leaflet/dist/leaflet.css";
+    mapboxgl.accessToken = 'pk.eyJ1IjoidW1ncnUiLCJhIjoiY2w0bzd5aHc3MDR5ZzNkbGx5bzh0bWZ3YiJ9.1m8NjPzeitlkvyR7UsQzLQ';
+        
+
+    const center = {
+        lat: 51.505,
+        lng: -0.09,
+      }
+      
+      export default function DraggableMark() { 
+        const [draggable, setDraggable] = useState(false)
+        const [position, setPosition] = useState(center)
+        const markerRef = useRef(null)
+        const eventHandlers = useMemo(
+          () => ({
+            dragend() {
+              const marker = markerRef.current
+              if (marker != null) {
+                setPosition(marker.getLatLng())
+              }
+            },
+          }),
+          [],
+        )
+        const toggleDraggable = useCallback(() => {
+          setDraggable((d) => !d)
+        }, [])
+      
+        return (
+          <Marker
+            draggable={draggable}
+            eventHandlers={eventHandlers}
+            position={position}
+            ref={markerRef}>
+            <Popup minWidth={90}>
+              <span onClick={toggleDraggable}>
+                {draggable
+                  ? 'Marker is draggable'
+                  : 'Click here to make marker draggable'}
+              </span>
+            </Popup>
+          </Marker>
+        )
+      }
+      
+      render(
+        <MapContainer center={center} zoom={13} scrollWheelZoom={false}>
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          
+        </MapContainer>,
+      )
+      
+     /*  import React, { useRef, useState, useMemo, useCallback, Marker, Popup,render, MapContainer,TileLayer } from 'react';
+      import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
+      import "./draggable_mark.css"
+      import "leaflet/dist/leaflet.css";
+      mapboxgl.accessToken = 'pk.eyJ1IjoidW1ncnUiLCJhIjoiY2w0bzd5aHc3MDR5ZzNkbGx5bzh0bWZ3YiJ9.1m8NjPzeitlkvyR7UsQzLQ';
+
+      const center = {
+        lat: 51.505,
+        lng: -0.09,
+      }
+      
+      export default function DraggableMark() { 
+        const [draggable, setDraggable] = useState(false)
+        const [position, setPosition] = useState(center)
+        const markerRef = useRef(null)
+        const eventHandlers = useMemo(
+          () => ({
+            dragend() {
+              const marker = markerRef.current
+              if (marker != null) {
+                setPosition(marker.getLatLng())
+              }
+            },
+          }),
+          [],
+        )
+        const toggleDraggable = useCallback(() => {
+          setDraggable((d) => !d)
+        }, [])
+      
+        return (
+          <Marker
+            draggable={draggable}
+            eventHandlers={eventHandlers}
+            position={position}
+            ref={markerRef}>
+            <Popup minWidth={90}>
+              <span onClick={toggleDraggable}>
+                {draggable
+                  ? 'Marker is draggable'
+                  : 'Click here to make marker draggable'}
+              </span>
+            </Popup>
+          </Marker>
+        )
+      }
+      
+      render(
+        <MapContainer center={center} zoom={13} scrollWheelZoom={false}>
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+        </MapContainer>,
+      ) */
+
+      /* import React, { useRef, useState, useMemo, useCallback, Marker, Popup,render, MapContainer,TileLayer } from 'react';
+      const center = {
+        lat: 51.505,
+        lng: -0.09,
+      }
+      
+      export default function DraggableMarker() {
+        const [draggable, setDraggable] = useState(false)
+        const [position, setPosition] = useState(center)
+        const markerRef = useRef(null)
+        const eventHandlers = useMemo(
+          () => ({
+            dragend() {
+              const marker = markerRef.current
+              if (marker != null) {
+                setPosition(marker.getLatLng())
+              }
+            },
+          }),
+          [],
+        )
+        const toggleDraggable = useCallback(() => {
+          setDraggable((d) => !d)
+        }, [])
+      
+        return (
+          <Marker
+            draggable={draggable}
+            eventHandlers={eventHandlers}
+            position={position}
+            ref={markerRef}>
+            <Popup minWidth={90}>
+              <span onClick={toggleDraggable}>
+                {draggable
+                  ? 'Marker is draggable'
+                  : 'Click here to make marker draggable'}
+              </span>
+            </Popup>
+          </Marker>
+        )
+      }
+      
+      render(
+        <MapContainer center={center} zoom={13} scrollWheelZoom={false}>
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+        </MapContainer>,
+      ) */
