@@ -1,40 +1,55 @@
-import React, { useRef, useEffect, useState } from 'react';
-import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
-import "./draggable_mark.css"
-import "leaflet/dist/leaflet.css";
+import { useCallback, useMemo, useRef, useState } from 'react'
+import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 
-mapboxgl.accessToken = 'pk.eyJ1IjoidW1ncnUiLCJhIjoiY2w0bzd5aHc3MDR5ZzNkbGx5bzh0bWZ3YiJ9.1m8NjPzeitlkvyR7UsQzLQ';
+const center = {
+  lat: 51.505,
+  lng: -0.09,
+}
 
-export default function DraggableMark() {
-  const mapContainer = useRef(null);
-  const map = useRef(null);
-  const [lng, setLng] = useState(-58.45400186608953 );
-  const [lat, setLat] = useState(-34.549207371406716);
-  const [zoom, setZoom] = useState(11);
- 
-useEffect(() => {
-    if (map.current) return;
-    map.current = new mapboxgl.Map({
-      container: mapContainer.current,
-      style: 'mapbox://styles/umgru/cl53gtdyf000614pmr05mcd1u',
-      center: [lng, lat],
-      zoom: zoom
-    });
-  });
+export default function DraggableMarker() {
+  const [draggable, setDraggable] = useState(false)
+  const [position, setPosition] = useState(center)
+  const markerRef = useRef(null)
+  const eventHandlers = useMemo(
+    () => ({
+      dragend() {
+        const marker = markerRef.current
+        if (marker != null) {
+          setPosition(marker.getLatLng())
+        }
+      },
+    }),
+    [],
+  )
+  const toggleDraggable = useCallback(() => {
+    setDraggable((d) => !d)
+  }, [])
 
-useEffect(() => {
-  if (!map.current) return;
-    map.current.on('move', () => {
-    setLng(map.current.getCenter().lng.toFixed(4));
-    setLat(map.current.getCenter().lat.toFixed(4));
-    setZoom(map.current.getZoom().toFixed(2));
-  });
-});
+  return (
+    <Marker
+      draggable={draggable}
+      eventHandlers={eventHandlers}
+      position={position}
+      ref={markerRef}>
+      <Popup minWidth={90}>
+        <span onClick={toggleDraggable}>
+          {draggable
+            ? 'Marker is draggable'
+            : 'Click here to make marker draggable'}
+        </span>
+      </Popup>
+    </Marker>
+  )
+}
 
-return (  
-  <>
-    <div ref={mapContainer} className="map-container" />      
-    <div className="sidebar"> Longitude: {lng} | Latitude: {lat} | Zoom: {zoom} </div>
-  </>
-  );
+function DraggableMarkerExample() {
+  return (
+    <MapContainer center={center} zoom={13}>
+      <TileLayer
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      />
+      <DraggableMarker />
+    </MapContainer>
+  )
 }
