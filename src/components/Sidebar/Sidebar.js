@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./Sidebar.css";
 import SideNav, {NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import AddIcon from '@mui/icons-material/Add';
 import ImportContactsOutlinedIcon from '@mui/icons-material/ImportContactsOutlined';
-/* import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined'; */
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
@@ -22,7 +21,22 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import CloseIcon from '@mui/icons-material/Close';
-import DraggableMark  from "../Pruebas/draggable_mark";
+
+const URL_LOGIN = "https://localhost/ws-login/login.php"
+
+const enviarData = async (url, data)=> {
+
+const resp = await fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/jason'
+        }
+    });
+
+    console.log(resp)
+
+}
 
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
@@ -65,6 +79,19 @@ export default function Navbar(){
               setOpenDraggableMark(false);
             };
 
+    const refUsuario = useRef(null);
+    const refClave = useRef(null);
+
+    const handleLogin=()=> {
+        const data = {
+            "usuario": refUsuario.current.value,
+            "clave": refClave.current.value
+        }
+        
+        console.log(data);
+        enviarData(URL_LOGIN, data);
+
+    }   
           
     return(
         <>
@@ -87,22 +114,23 @@ export default function Navbar(){
                             >
                                 <DialogTitle className = "Titulo">{"INICIAR SESIÓN"}</DialogTitle>
                                 <DialogContent>
-                                    <TextField className='input'
+                                    <input className='login-input'
                                     autoFocus
                                     margin="dense"
                                     id="name"
-                                    label="Email Address"
+                                    placeholder="Email Address"
                                     type="email"
                                     fullWidth
                                     variant="standard"
+                                    ref={refUsuario}
                                     />
-                                    <TextField className='input'
+                                    <input className='login-input'
                                     name="password"
                                     type="password"
                                     placeholder="password"
-                                    label="Password"
                                     fullWidth
                                     variant="standard"
+                                    ref={refClave}
                                     />
                                 </DialogContent>    
                                 <DialogContentText>
@@ -110,7 +138,7 @@ export default function Navbar(){
                                 </DialogContentText>        
                                 <DialogActions>
                                 <Button onClick={handleCloseInicio}>CANCELAR</Button>
-                                <Button onClick={handleCloseInicio}>CONTINUAR</Button>
+                                <Button onClick={handleLogin}>CONTINUAR</Button>
                                 </DialogActions>
                             </Dialog>      
                         </NavText>
@@ -232,7 +260,7 @@ export default function Navbar(){
                                 </AppBar>
 
                                 <h1>Hola</h1>
-                                <DraggableMark/>
+                                {/* <DraggableMark/> */}
 
                             </Dialog>
                         </NavText>
