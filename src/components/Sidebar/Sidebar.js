@@ -12,7 +12,6 @@ import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
-import TextField from '@mui/material/TextField';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Slide from '@mui/material/Slide';
@@ -22,7 +21,7 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import CloseIcon from '@mui/icons-material/Close';
 
-const URL_LOGIN = "https://localhost/ws-login/login.php"
+const URL_LOGIN = "http://localhost/ws-login/login.php"
 
 const enviarData = async (url, data)=> {
 
@@ -34,8 +33,9 @@ const resp = await fetch(url, {
         }
     });
 
-    console.log(resp)
-
+    console.log(resp);
+    const json = await resp.json();
+    console.log(json);
 }
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -89,7 +89,7 @@ export default function Navbar(){
         }
         
         console.log(data);
-        enviarData(URL_LOGIN, data);
+        enviarData( URL_LOGIN, data);
 
     }   
           
@@ -114,6 +114,7 @@ export default function Navbar(){
                             >
                                 <DialogTitle className = "Titulo">{"INICIAR SESIÓN"}</DialogTitle>
                                 <DialogContent>
+                                   
                                     <input className='login-input'
                                     autoFocus
                                     margin="dense"
@@ -124,6 +125,7 @@ export default function Navbar(){
                                     variant="standard"
                                     ref={refUsuario}
                                     />
+                                    
                                     <input className='login-input'
                                     name="password"
                                     type="password"
@@ -132,10 +134,7 @@ export default function Navbar(){
                                     variant="standard"
                                     ref={refClave}
                                     />
-                                </DialogContent>    
-                                <DialogContentText>
-                                    <a className = "" href="/Registrarse">Registrarme</a>
-                                </DialogContentText>        
+                                </DialogContent>
                                 <DialogActions>
                                 <Button onClick={handleCloseInicio}>CANCELAR</Button>
                                 <Button onClick={handleLogin}>CONTINUAR</Button>

@@ -1,11 +1,15 @@
 import React, { useRef, useEffect, useState } from 'react';
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 import "./MapView.css"
-import Sidebar from "../Sidebar/Sidebar"
+import Sidebar from "../Sidebar/Sidebar";
+import Draggable_Marker from './components/Draggable_Marker/draggable_marker';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoidW1ncnUiLCJhIjoiY2w0bzd5aHc3MDR5ZzNkbGx5bzh0bWZ3YiJ9.1m8NjPzeitlkvyR7UsQzLQ';
 
 export default function MapView() {
+
+  const [conectado, setConectado]= useState(false) 
+
   const mapContainer = useRef(null);
   const map = useRef(null);
   const [lng, setLng] = useState(-58.45400186608953 );
@@ -32,8 +36,8 @@ useEffect(() => {
 });
 
 return (  
-  <>
-    {<Sidebar/>}
+  <>    
+    <Sidebar/>
     <div ref={mapContainer} className="map-container" />      
     <div className="sidebar"> Longitude: {lng} | Latitude: {lat} | Zoom: {zoom} </div>
   </>
