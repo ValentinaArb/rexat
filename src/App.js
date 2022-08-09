@@ -1,12 +1,20 @@
+import React, {useEffect, useState} from "react";
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Main from "./components/Main/Main";
 import MapView  from "./components/Mapa/MapView";
 import Draggable_Marker from './components/Draggable_Marker/draggable_marker';
 
 export default function App() { 
+  const [conectado, setConectado]= useState(false) 
   
-  return(
-     <>
+  const acceder=(estado)=>{
+    conectado(estado)
+  }
+  return(    
+/*     conectado ? <MapView/> : <Draggable_Marker acceder = {acceder}/>
+ */
+    <>
+
      <BrowserRouter>
        <Routes> 
          <Route path="/" element={<Main/>}/>
@@ -14,7 +22,7 @@ export default function App() {
          <Route path = "/draggableMark" element = {<Draggable_Marker/>}/>
        </Routes>
      </BrowserRouter>
-      </>       
+    </>       
    );
 }
 

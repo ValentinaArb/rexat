@@ -6,9 +6,7 @@ import Draggable_Marker from '../Draggable_Marker/draggable_marker';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoidW1ncnUiLCJhIjoiY2w0bzd5aHc3MDR5ZzNkbGx5bzh0bWZ3YiJ9.1m8NjPzeitlkvyR7UsQzLQ';
 
-export default function MapView() {
-
-  const [conectado, setConectado]= useState(false) 
+export default function MapView() {  
 
   const mapContainer = useRef(null);
   const map = useRef(null);

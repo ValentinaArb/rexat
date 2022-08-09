@@ -259,7 +259,7 @@ export default function Navbar(){
                                 </AppBar>
 
                                 <h1>Hola</h1>
-                                {/* <DraggableMark/> */}
+                                <draggable_marker/>
 
                             </Dialog>
                         </NavText>
