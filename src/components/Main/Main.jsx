@@ -5,6 +5,12 @@ import "aos/dist/aos.css";
 import basura from "../../img/basura.png";
 import linkedin from "../../img/linkedin.png";
 import planeta from "../../img/planeta.png";
+import juntando_basura from "../../img/juntando_basura.png";
+import nosotros from "../../img/nosotros.png";
+import linkedin_iara from "../../img/linkedin_iara.png";
+import linkedin_uma from "../../img/linkedin_uma.png";
+import linkedin_valen from "../../img/linkedin_valen.png"
+import linkedin_joaco from "../../img/linkedin_joaco.png";
 import separador from "../../img/separador.png";
 import {Link} from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
@@ -37,8 +43,8 @@ export default function Main() {
                  <h2 className= "Subtitulo"> ¿Quiénes somos?</h2>
                   <p>Somos un grupo de estudiantes de 5to año en ORT Argentina. Creamos Rexat, una plataforma que mediante imagenes satelitales permite reconocer grandes acumulaciones de basura marina en las costas , con el fin de ayudar al medio ambiente. </p>
               </div>
-              <div data-aos="fade-up" data-aos-duration="1000" className ="Conocenosimg"> IMAGEN </div>   
-              <div data-aos="fade-up" data-aos-duration="1000" className ="Conocenosimg"> IMAGEN </div>
+              <div className='centrar'><img data-aos="fade-up" data-aos-duration="1000" className ="Conocenosimg" src= {nosotros} alt=""/></div>
+              <div className='centrar'><img data-aos="fade-up" data-aos-duration="1000" className ="Conocenosimg" src= {juntando_basura} alt=""/> </div>
               <div data-aos="fade-up" data-aos-duration="1000">
                   <h2 data-aos="fade-up"data-aos-duration="1000" className= "Subtitulo"> Nuestra Finalidad</h2>
                   <p data-aos="fade-up" data-aos-duration="1000"> Buscamos concientizar y crear una plataforma de libre acceso para que cualquier persona que quiera participar en la limpieza de las costas: una gran necesidad ambiental de hoy en día.</p>
@@ -52,34 +58,43 @@ export default function Main() {
 
       <h1 data-aos="fade-up" data-aos-duration="1000" className='centrar' id = "Conocenos"> Contactanos </h1>            
       <div data-aos="fade-up" data-aos-duration="1000" className = "Grid2">      
+              
               <div className = "Joaco">
-                <p className='Nombre'> Joaquín<br></br>Marcel </p>
-                  <div className = "info">
-                    <a target = "_blank" rel= "noreferrer" href = "https://www.linkedin.com/in/valentina-arbarello-baa963246"><img className='linkedin' src= {linkedin} alt=" "/></a>
-                    <div className='rol'><p> Back-End</p></div>
+                <div className='centrar'><img data-aos="fade-up" data-aos-duration="1000" className ="linkedin_foto" src= {linkedin_joaco} alt=""/> </div>
+                <div className= "centrar"><p className='linkedin_info'> Joaquín Marcel </p></div>
+                <div className='centrar'>
+                  <p className= "rol">Back-End</p>
+                  <a className = "link" target = "_blank" rel= "noreferrer" href = "https://www.linkedin.com/in/valentina-arbarello-baa963246"><img className='linkedin_link' src= {linkedin} alt=" "/></a> 
                 </div>
               </div>
+              
               <div className = "Tina">
-                <p className='Nombre'> Valentina<br></br>Arbarello </p>
-                  <div className = "info">
-                     <a target = "_blank" rel= "noreferrer" href = "https://www.linkedin.com/in/valentina-arbarello-baa963246"><img className='linkedin' src= {linkedin} alt=" "/></a> 
-                     <div className='rol'><p>Full-Stack</p></div>                    
-                  </div>
-              </div>
-              <div className = "Iara">
-                <p className='Nombre'> Iara<br></br>Srur </p>
-                  <div className = "info">
-                    <a target = "_blank" rel= "noreferrer" href = "https://www.linkedin.com/in/valentina-arbarello-baa963246"><img className='linkedin' src= {linkedin} alt=" "/></a>
-                    <div className='rol'><p> Back-End</p></div>
-                  </div>
+                <div className='centrar'><img data-aos="fade-up" data-aos-duration="1000" className ="linkedin_foto" src= {linkedin_valen} alt=""/> </div>
+                <div className= "centrar"><p className='linkedin_info'> Valentina Arbarello </p></div>
+                <div className='centrar'>
+                  <p className= "rol">Full-Stack</p>
+                  <a className = "link" target = "_blank" rel= "noreferrer" href = "https://www.linkedin.com/in/valentina-arbarello-baa963246"><img className='linkedin_link' src= {linkedin} alt=" "/></a> 
                 </div>
-              <div className = "Uma">
-              <p className='Nombre'> Uma<br></br>Grün </p>
-                  <div className = "info">
-                    <a target = "_blank" rel= "noreferrer" href = "https://www.linkedin.com/in/valentina-arbarello-baa963246"><img className='linkedin' src= {linkedin} alt=" "/></a>
-                    <div className='rol'><p> UX/UI Designer</p></div>
-                  </div>
               </div>
+              
+              <div className = "Iara">
+                <div className='centrar'><img data-aos="fade-up" data-aos-duration="1000" className ="linkedin_foto" src= {linkedin_iara} alt=""/> </div>
+                <div className= "centrar"><p className='linkedin_info'> Iara Srur </p></div>
+                <div className='centrar'>
+                  <p className= "rol">Full-Stack</p>
+                  <a className = "link" target = "_blank" rel= "noreferrer" href = "https://www.linkedin.com/in/valentina-arbarello-baa963246"><img className='linkedin_link' src= {linkedin} alt=" "/></a> 
+                </div>
+              </div>
+
+              <div className = "Uma">
+                <div className='centrar'><img data-aos="fade-up" data-aos-duration="1000" className ="linkedin_foto" src= {linkedin_uma} alt=""/> </div>
+                <div className= "centrar"><p className='linkedin_info'> Uma Grün </p></div>
+                <div className='centrar'>
+                  <p className= "rol">UX/UI Designer</p>
+                  <a className = "link" target = "_blank" rel= "noreferrer" href = "https://www.linkedin.com/in/valentina-arbarello-baa963246"><img className='linkedin_link' src= {linkedin} alt=" "/></a> 
+                </div>
+              </div>
+               
       </div>
 
       <div data-aos="fade-up" data-aos-duration="1000" className='centrar'><img className='separador' src= {separador} alt=" "/></div>

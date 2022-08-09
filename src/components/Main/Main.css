@@ -37,22 +37,18 @@
     grid-gap: 50px;
 }
 .Conocenosimg{
-    background-color: #FF921C;
-    height:300px; width: 500px;
+    border-radius: 15px;
+    height:400px;
     display: flex; align-items: center;  justify-content: center;
 }
-.Info{
-    display: inline-flex; align-items: center;
-}
+
 .titulo{
     display: flex; align-items: center;  justify-content: center;
     text-decoration: underline;
 }
-.Nombre{
-    display: flex; align-items: center;  justify-content: center;
-    background-color: #FF921C;
-    height: 200px; width: 200px;
-    border-radius: 50%;
+.linkedin_info{
+    display: block;
+    height:30px;
 }
 .footer{
     padding: 15px;
@@ -86,10 +82,10 @@
 }
 .centrar{
     display: flex; justify-content: center;
-    text-decoration: underline;
 }
 .rol{
-    display: flex; justify-content: center;
+    display: block;
+    padding-right: 10px;
 }
 .input{
     padding: 2%;
@@ -98,6 +94,21 @@
     display: inline-flex;
     align-items: center;
 }
-.linkedin{
+.linkedin_link{
     height:30px;
+    display: block;
+}
+#Conocenos{
+    text-decoration: underline;
+}
+
+#Rexat{
+    text-decoration: underline;
+}
+#titulo{
+    text-decoration: underline;
+}
+.linkedin_foto{
+    height: 200px;
+    margin: 10px;
 }
