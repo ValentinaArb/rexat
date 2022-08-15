@@ -3,6 +3,7 @@ import "./Main.css";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import basura from "../../img/basura.png";
+import basura_satelital from "../../img/basura_satelital.png";
 import linkedin from "../../img/linkedin.png";
 import planeta from "../../img/planeta.png";
 import juntando_basura from "../../img/juntando_basura.png";
@@ -53,7 +54,8 @@ export default function Main() {
                   <h2 data-aos="fade-up"> Tecnología aplicada</h2>
                   <p data-aos="fade-up" > Trabajamos con imagenes satelitales y creando un programa de machine lerning que nos permite localizar los puntos más grandes de basura en las costas en tiempo actual.</p>
               </div>  
-              <div  className ="Conocenosimg"> IMAGEN </div>  
+              <div className='centrar'><img data-aos="fade-up" data-aos-duration="1000" className ="Conocenosimg" src= {basura_satelital} alt=""/></div>
+              
       </div> 
 
       <h1 data-aos="fade-up" data-aos-duration="1000" className='centrar' id = "Conocenos"> Contactanos </h1>            

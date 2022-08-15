@@ -10,8 +10,8 @@ export default function MapView() {
 
   const mapContainer = useRef(null);
   const map = useRef(null);
-  const [lng, setLng] = useState(-58.45400186608953 );
-  const [lat, setLat] = useState(-34.549207371406716);
+  const [lng, setLng] = useState(-58.4540 );
+  const [lat, setLat] = useState(-34.5492);
   const [zoom, setZoom] = useState(11);
  
 useEffect(() => {

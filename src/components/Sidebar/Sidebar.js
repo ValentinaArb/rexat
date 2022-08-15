@@ -100,11 +100,10 @@ export default function Navbar(){
                 <SideNav.Nav>
                     <NavItem eventKey="añadir-punto">
                         <NavIcon>
-                            <AddIcon/>
-                            <i className="Sidebar-btn-contactanos" style={{ fontSize: '1.75em' }} />
+                        <div className='centrar-icon' >  <AddIcon/> </div>
                         </NavIcon>
                         <NavText>
-                        <p onClick={handleClickOpenInicio}>Ingresar</p>
+                        <p onClick={handleClickOpenInicio}>Ingresar</p> 
                             <Dialog
                                 open={openInicio}
                                 TransitionComponent={Transition}
@@ -144,7 +143,7 @@ export default function Navbar(){
                     </NavItem>
                     <NavItem eventKey="telefonos">
                         <NavIcon>
-                            <ImportContactsOutlinedIcon/>
+                        <div className='centrar-icon' ><ImportContactsOutlinedIcon/></div>
                             <i className="Sidebar-btn-contactanos" style={{ fontSize: '1.75em' }} />
                         </NavIcon>
                         <NavText>
@@ -173,7 +172,7 @@ export default function Navbar(){
 
                     <NavItem eventKey="Preguntas">
                         <NavIcon>
-                            <HelpOutlineOutlinedIcon/>
+                        <div className='centrar-icon'> <HelpOutlineOutlinedIcon/> </div>
                             <i className="Sidebar-btn" style={{ fontSize: '1.75em' }} />
                         </NavIcon>
                         <NavText>
@@ -209,29 +208,19 @@ export default function Navbar(){
                      <NavItem eventKey="Volver">
                     
                         <NavIcon>
-                            <Link to = "/">
-                                <HomeOutlinedIcon/>
-                                <i className="Sidebar-btn-volver" style={{ fontSize: '1.75em' }} />
+                        <div className='centrar-icon'><HomeOutlinedIcon/></div>
+                                <i className="Sidebar-btn-volver" style={{ fontSize: '1.75em' }} />                       
+                        </NavIcon>
+                        <NavText>
+                        <Link to = "/">
+                                Volver
                             </Link>
-                       
-                        </NavIcon>
-                        <NavText>
-                            Volver
                         </NavText>                        
-                    </NavItem>
-                                          
-                    <NavItem className="logo-Sidebar">
-                        <NavIcon>
-                            <img className="logo" src= {logo} alt=" "></img>
-                        </NavIcon>
-                        <NavText>
-                            Rexat.proyecto@gmail.com
-                        </NavText>
-                    </NavItem>
-
+                    </NavItem>                   
+                    
                     <NavItem className="logo-Sidebar">
                         <NavText>
-                        <p onClick={handleClickOpenDraggableMark}> Draggable mark</p>
+                        <p onClick={handleClickOpenDraggableMark}> prueba</p>
 
                             <Dialog
                                 fullScreen
@@ -262,6 +251,15 @@ export default function Navbar(){
                                 <draggable_marker/>
 
                             </Dialog>
+                        </NavText>
+                    </NavItem>
+
+                    <NavItem className="logo-Sidebar">
+                        <NavIcon>
+                            <img className="logo" src= {logo} alt=" "></img>
+                        </NavIcon>
+                        <NavText>
+                            Rexat.proyecto@gmail.com
                         </NavText>
                     </NavItem>
        
