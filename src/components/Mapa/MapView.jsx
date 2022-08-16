@@ -3,6 +3,7 @@ import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-load
 import "./MapView.css"
 import Sidebar from "../Sidebar/Sidebar";
 import Draggable_Marker from '../Draggable_Marker/draggable_marker';
+import geoJson from "./location.json"
 
 mapboxgl.accessToken = 'pk.eyJ1IjoidW1ncnUiLCJhIjoiY2w0bzd5aHc3MDR5ZzNkbGx5bzh0bWZ3YiJ9.1m8NjPzeitlkvyR7UsQzLQ';
 
@@ -23,15 +24,10 @@ useEffect(() => {
       zoom: zoom
     });
   });
+  geoJson.features.map((feature) =>
+  new mapboxgl.Marker().setLngLat(feature.geometry.coordinates).addTo(map)
+  );
 
-useEffect(() => {
-  if (!map.current) return;
-    map.current.on('move', () => {
-    setLng(map.current.getCenter().lng.toFixed(4));
-    setLat(map.current.getCenter().lat.toFixed(4));
-    setZoom(map.current.getZoom().toFixed(2));
-  });
-});
 
 return (  
   <>
