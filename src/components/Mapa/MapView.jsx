@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 import "./MapView.css"
 import Sidebar from "../Sidebar/Sidebar";
-import Draggable_Marker from '../Draggable_Marker/draggable_marker';
+//s import Draggable_Marker from '../Draggable_Marker/draggable_marker';
 import geoJson from "./location.json"
 
 mapboxgl.accessToken = 'pk.eyJ1IjoidW1ncnUiLCJhIjoiY2w0bzd5aHc3MDR5ZzNkbGx5bzh0bWZ3YiJ9.1m8NjPzeitlkvyR7UsQzLQ';
@@ -15,8 +15,10 @@ export default function MapView() {
   const [lat, setLat] = useState(-34.5492);
   const [zoom, setZoom] = useState(11);
  
-useEffect(() => {
-    if (map.current) return;
+  useEffect(() => {
+    if (map.current){ 
+    return;
+    }
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: 'mapbox://styles/umgru/cl53gtdyf000614pmr05mcd1u',
@@ -24,9 +26,16 @@ useEffect(() => {
       zoom: zoom
     });
   });
-  geoJson.features.map((feature) =>
-  new mapboxgl.Marker().setLngLat(feature.geometry.coordinates).addTo(map)
-  );
+
+  new mapboxgl.Marker({
+    color: "#FFFFFF"
+    }).setLngLat([30.5, 50.5])
+    .addTo(map.current);
+  
+  //console.log('Este es el map: ' + map.current)
+  /*geoJson.features.map((feature) =>
+  );*/
+// Create a new marker.
 
 
 return (  
