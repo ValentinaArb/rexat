@@ -31,10 +31,10 @@ export default function Main() {
       </div>
 
       <div data-aos="fade-up" data-aos-duration="1000" id='Parte2'>
-          <h2 className='frase'>Cuidemos nuestro planeta</h2>
-          <h3 className='frase'>Actualmente hay mucha basura en las costas de todo el mundo </h3>
-          <h4 className='frase'>Y hay que trabajar juntos para resolverlo, </h4>
-          <h4 className='frase'>para tener un futuro mejor.</h4>
+          <h2 className='frase' data-aos="fade-up" data-aos-duration="1200">Cuidemos nuestro planeta</h2>
+          <h3 className='frase' data-aos="fade-up" data-aos-duration="1200">Actualmente hay mucha basura en las costas de todo el mundo </h3>
+          <h4 className='frase' data-aos="fade-up" data-aos-duration="1200">Y hay que trabajar juntos para resolverlo, </h4>
+          <h4 className='frase' data-aos="fade-up" data-aos-duration="1200">para tener un futuro mejor.</h4>
       </div>
 
       <div data-aos="fade-up" data-aos-duration="1000" className='centrar'><img id = "Rexat" className='separador' src= {separador} alt=" "/></div>

