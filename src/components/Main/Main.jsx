@@ -37,8 +37,8 @@ export default function Main() {
           <h4 className='frase'>para tener un futuro mejor.</h4>
       </div>
 
-      <div data-aos="fade-up" data-aos-duration="1000" className='centrar'><img className='separador' src= {separador} alt=" "/></div>
-       <h1 data-aos="fade-up" data-aos-duration="1000" className='centrar' id = "Rexat"> ¿Qué es Rexat?</h1>
+      <div data-aos="fade-up" data-aos-duration="1000" className='centrar'><img id = "Rexat" className='separador' src= {separador} alt=" "/></div>
+       <h1 data-aos="fade-up" data-aos-duration="1000" className='centrar'> ¿Qué es Rexat?</h1>
       <div className="Grid1">        
               <div data-aos="fade-up" data-aos-duration="1000">
                  <h2 className= "Subtitulo"> ¿Quiénes somos?</h2>
@@ -99,8 +99,8 @@ export default function Main() {
                
       </div>
 
-      <div data-aos="fade-up" data-aos-duration="1000" className='centrar'><img className='separador' src= {separador} alt=" "/></div>
-      <div data-aos="fade-up" data-aos-duration="1000" className='centrar'><h1 id='titulo'>Acceder al mapa</h1></div>
+      <div data-aos="fade-up" data-aos-duration="1000" className='centrar'><img id='titulo' className='separador' src= {separador} alt=" "/></div>
+      <div data-aos="fade-up" data-aos-duration="1000" className='centrar'><h1 >Acceder al mapa</h1></div>
       <div data-aos="fade-up" data-aos-duration="1000" className='centrar'><Link to = "/mapview"> <img className= "planeta" src= {planeta} alt=" "/></Link></div>  
 
     </div>

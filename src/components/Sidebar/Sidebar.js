@@ -15,11 +15,8 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Slide from '@mui/material/Slide';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import CloseIcon from '@mui/icons-material/Close';
+import plantas from "../../img/plantas-vertical.png";
+import { toBeInTheDOM } from "@testing-library/jest-dom/dist/matchers";
 
 const URL_LOGIN = "http://localhost/ws-login/login.php"
 
@@ -36,6 +33,7 @@ const resp = await fetch(url, {
     console.log(resp);
     const json = await resp.json();
     console.log(json);
+    console.log("BIEN");
 }
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -70,13 +68,13 @@ export default function Navbar(){
             setOpenPreguntas(false);
           };
 
-    const [openDraggableMark, setOpenDraggableMark] = React.useState(false);
-          const handleClickOpenDraggableMark = () => {
-              setOpenDraggableMark(true);
+    const [openVolver, setOpenVolver] = React.useState(false);
+          const handleClickOpenVolver = () => {
+              setOpenVolver(true);
             };
       
-            const handleCloseDraggableMark = () => {
-              setOpenDraggableMark(false);
+            const handleCloseVolver = () => {
+              setOpenVolver(false);
             };
 
     const refUsuario = useRef(null);
@@ -110,6 +108,7 @@ export default function Navbar(){
                                 keepMounted
                                 onClose={handleCloseInicio}
                                 aria-describedby="alert-dialog-slide-description"
+                                id = "formulario"
                             >
                                 <DialogTitle className = "Titulo">{"INICIAR SESIÓN"}</DialogTitle>
                                 <DialogContent>
@@ -136,7 +135,7 @@ export default function Navbar(){
                                 </DialogContent>
                                 <DialogActions>
                                 <Button onClick={handleCloseInicio}>CANCELAR</Button>
-                                <Button onClick={handleLogin}>CONTINUAR</Button>
+                                <Button onClick={handleLogin} type="submit">CONTINUAR</Button>
                                 </DialogActions>
                             </Dialog>      
                         </NavText>
@@ -212,47 +211,39 @@ export default function Navbar(){
                                 <i className="Sidebar-btn-volver" style={{ fontSize: '1.75em' }} />                       
                         </NavIcon>
                         <NavText>
-                        <Link to = "/">
-                                Volver
-                            </Link>
-                        </NavText>                        
-                    </NavItem>                   
-                    
-                    <NavItem className="logo-Sidebar">
-                        <NavText>
-                        <p onClick={handleClickOpenDraggableMark}> prueba</p>
-
+                        <p onClick={handleClickOpenVolver}> Volver</p>
                             <Dialog
-                                fullScreen
-                                open={openDraggableMark}
-                                onClose={handleCloseDraggableMark}
+                                open={openVolver}
                                 TransitionComponent={Transition}
+                                keepMounted
+                                onClose={handleCloseVolver}
+                                aria-describedby="alert-dialog-slide-description"
                             >
-                                <AppBar sx={{ position: 'relative' }}>
-                                <Toolbar>
-                                    <IconButton
-                                    edge="start"
-                                    color="inherit"
-                                    onClick={handleCloseDraggableMark}
-                                    aria-label="close"
-                                    >
-                                    <CloseIcon />
-                                    </IconButton>
-                                    <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
-                                    Agregar punto
-                                    </Typography>
-                                    <Button autoFocus color="inherit" onClick={handleCloseDraggableMark}>
-                                    Agregar
-                                    </Button>
-                                </Toolbar>
-                                </AppBar>
-
-                                <h1>Hola</h1>
-                                <draggable_marker/>
-
+                                <DialogTitle className = "Titulo">{"¿Esta seguro que quiere regresar al inicio ?"}</DialogTitle>
+                                <DialogActions>
+                                
+                                <div className= "centrar"> 
+                                <div className="Volverbtn"> <Button> <Link to = "/" > Si, quiero regresar. </Link></Button> 
+                                <Button onClick={handleCloseVolver}> No, prefiero quedarme.</Button></div></div>
+                                
+                                </DialogActions>
                             </Dialog>
-                        </NavText>
-                    </NavItem>
+                        </NavText>                        
+                    </NavItem>      
+
+                    {/* <NavItem eventKey="planta">                    
+                        <NavIcon>
+                        <div className='centrar-icon'><img className='planta' src= {plantas} alt=" "/></div>
+                        </NavIcon>
+                        <NavText>                       
+                                <h4 className= "frase-rexat">
+                                Reducir, <br></br>
+                                Reusar, <br></br>
+                                Reciclar,   <br></br>
+                                Rexat.  <br></br>
+                                </h4>
+                        </NavText>     
+                </NavItem> */}                    
 
                     <NavItem className="logo-Sidebar">
                         <NavIcon>

@@ -67,7 +67,7 @@
     margin-right: 15rem;
 }
 .planeta{
-    padding: 2cm;
+    margin: 4cm;
     display: inline; 
 }
 .basura{
@@ -79,6 +79,7 @@
 }
 .separador{
     width: 30rem;
+    margin: 2rem;
 }
 .centrar{
     display: flex; justify-content: center;
@@ -99,15 +100,7 @@
     display: block;
 }
 #Conocenos{
-    text-decoration: underline;
     margin-bottom: 5%;
-}
-
-#Rexat{
-    text-decoration: underline;
-}
-#titulo{
-    text-decoration: underline;
 }
 .linkedin_foto{
     height: 200px;

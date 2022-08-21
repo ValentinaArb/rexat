@@ -1,24 +1,33 @@
 #Sidebar{
-  background-color: #3A5A40;
+  background-color: #105510;
 }
-
 .logo-Sidebar{
   width: 30%;
   display: inline;
+  margin-top: 90%;
 }
 .Titulo{
   display: flex; justify-content: center; align-items: center;
   text-decoration: underline;
 }
-
 .Contacto{
   margin:10px;
   color:black;
 }
-
 .preguntas-respuestas{
   color:black;
 }
 .login-input{
   display: block;
+}
+.Volverbtn{
+  text-decoration: underline;
+  color:#0A58CA;
+}
+.centrar{
+  display: flex;
+  justify-content: center;
+}
+.planta{
+  color: #3D8430
 }
