@@ -63,6 +63,7 @@ export default function Navbar(){
         console.log(data);
         enviarData( URL_LOGIN, data);
         setOpenInicio(false);
+        setOpenAñadir(true);
     }
 
     const [openInicio, setOpenInicio] = React.useState(false);
@@ -100,17 +101,16 @@ export default function Navbar(){
             const handleCloseVolver = () => {
               setOpenVolver(false);
             };
-            
+
     const [openAñadir, setOpenAñadir] = React.useState(false);
-          const handleClickOpenAñadir = () => {
-              setOpenAñadir(true);
+        const handleClickOpenAñadir = () => {
+              
             };
       
-            const handleCloseAñadir = () => {
+        const handleCloseAñadir = () => {
               setOpenAñadir(false);
             };
-
-
+    
     return(
         <>
         <SideNav id="Sidebar">
@@ -120,7 +120,7 @@ export default function Navbar(){
                         <NavIcon>
                         <div className='centrar-icon' >  <AddIcon/> </div>
                         </NavIcon>
-                        <NavText eventKey="ingresar">
+                        <NavText>
                         <p onClick={handleClickOpenInicio}>Ingresar</p> 
                             <Dialog
                                 open={openInicio}
@@ -128,6 +128,8 @@ export default function Navbar(){
                                 keepMounted
                                 onClose={handleCloseInicio}
                                 aria-describedby="alert-dialog-slide-description"
+                                id = "formulario"
+                                class= "formulario"
                             >
                                 <DialogTitle className = "Titulo">{"INICIAR SESIÓN"}</DialogTitle>
                                 <DialogContent>
@@ -248,7 +250,7 @@ export default function Navbar(){
                                 </DialogActions>
                             </Dialog>
                         </NavText>                        
-                    </NavItem>        
+                    </NavItem>      
 
                     <NavItem className="logo-Sidebar">
                         <NavIcon>
@@ -259,9 +261,12 @@ export default function Navbar(){
                         </NavText>
                     </NavItem>
        
-                    <div eventKey="Añadir">
-                    
-                        
+                </SideNav.Nav>   
+                             
+        </SideNav>
+
+        <div eventKey="Añadir">
+                                            
                         <p onClick={handleClickOpenAñadir}> Volver</p>
                             <Dialog
                                 open={openAñadir}
@@ -270,21 +275,39 @@ export default function Navbar(){
                                 onClose={handleCloseAñadir}
                                 aria-describedby="alert-dialog-slide-description"
                             >
-                                <DialogTitle className = "Titulo">{"¿Esta seguro que quiere regresar al inicio ?"}</DialogTitle>
+                                <DialogTitle className = "Titulo">{"Añadir punto"}</DialogTitle>
+                                <DialogContent>
+                                   
+                                    <input className='Longitud'
+                                    autoFocus
+                                    margin="dense"
+                                    id="name"
+                                    placeholder="Longitud"
+                                    type="text"
+                                    fullWidth
+                                    variant="standard"
+                                    ref={refUsuario}
+                                    />
+                                    
+                                    <input className='Latitud'
+                                    autoFocus
+                                    margin="dense"
+                                    id="name"
+                                    placeholder="Latitud"
+                                    type="text"
+                                    fullWidth
+                                    variant="standard"
+                                    ref={refUsuario}
+                                    />
+                                </DialogContent>
                                 <DialogActions>
-                                
-                                <div className= "centrar"> 
-                                <div className="Volverbtn"> <Button> <Link to = "/" > Si, quiero regresar. </Link></Button> 
-                                <Button onClick={handleCloseAñadir}> No, prefiero quedarme.</Button></div></div>
-                                
+                                <Button onClick={handleCloseAñadir}>CANCELAR</Button>
+                                <Button onClick={handleCloseAñadir}>CONTINUAR</Button>
                                 </DialogActions>
-                            </Dialog>
+                            </Dialog>      
+                                  
                                             
                     </div>
-
-                </SideNav.Nav>   
-                             
-        </SideNav>
     </>
     );
 }
