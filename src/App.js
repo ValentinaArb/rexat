@@ -9,18 +9,16 @@ export default function App() {
   const acceder=(estado)=>{
     conectado(estado)
   }
-  return(    
+  return(
 /*     conectado ? <MapView/> : <Draggable_Marker acceder = {acceder}/>
- */
-    <>
-
+ */    <>    
      <BrowserRouter>
        <Routes> 
          <Route path="/" element={<Main/>}/>
          <Route path="/mapview" element={<MapView/>}/>
        </Routes>
      </BrowserRouter>
-    </>       
+    </>
    );
 }
 

