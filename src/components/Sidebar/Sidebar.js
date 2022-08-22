@@ -62,6 +62,7 @@ export default function Navbar(){
         });
         console.log(data);
         enviarData( URL_LOGIN, data);
+        setOpenInicio(false);
     }
 
     const [openInicio, setOpenInicio] = React.useState(false);
@@ -99,6 +100,16 @@ export default function Navbar(){
             const handleCloseVolver = () => {
               setOpenVolver(false);
             };
+            
+    const [openAñadir, setOpenAñadir] = React.useState(false);
+          const handleClickOpenAñadir = () => {
+              setOpenAñadir(true);
+            };
+      
+            const handleCloseAñadir = () => {
+              setOpenAñadir(false);
+            };
+
 
     return(
         <>
@@ -109,7 +120,7 @@ export default function Navbar(){
                         <NavIcon>
                         <div className='centrar-icon' >  <AddIcon/> </div>
                         </NavIcon>
-                        <NavText>
+                        <NavText eventKey="ingresar">
                         <p onClick={handleClickOpenInicio}>Ingresar</p> 
                             <Dialog
                                 open={openInicio}
@@ -237,21 +248,7 @@ export default function Navbar(){
                                 </DialogActions>
                             </Dialog>
                         </NavText>                        
-                    </NavItem>      
-
-                    {/* <NavItem eventKey="planta">                    
-                        <NavIcon>
-                        <div className='centrar-icon'><img className='planta' src= {plantas} alt=" "/></div>
-                        </NavIcon>
-                        <NavText>                       
-                                <h4 className= "frase-rexat">
-                                Reducir, <br></br>
-                                Reusar, <br></br>
-                                Reciclar,   <br></br>
-                                Rexat.  <br></br>
-                                </h4>
-                        </NavText>     
-                </NavItem> */}                    
+                    </NavItem>        
 
                     <NavItem className="logo-Sidebar">
                         <NavIcon>
@@ -262,6 +259,29 @@ export default function Navbar(){
                         </NavText>
                     </NavItem>
        
+                    <div eventKey="Añadir">
+                    
+                        
+                        <p onClick={handleClickOpenAñadir}> Volver</p>
+                            <Dialog
+                                open={openAñadir}
+                                TransitionComponent={Transition}
+                                keepMounted
+                                onClose={handleCloseAñadir}
+                                aria-describedby="alert-dialog-slide-description"
+                            >
+                                <DialogTitle className = "Titulo">{"¿Esta seguro que quiere regresar al inicio ?"}</DialogTitle>
+                                <DialogActions>
+                                
+                                <div className= "centrar"> 
+                                <div className="Volverbtn"> <Button> <Link to = "/" > Si, quiero regresar. </Link></Button> 
+                                <Button onClick={handleCloseAñadir}> No, prefiero quedarme.</Button></div></div>
+                                
+                                </DialogActions>
+                            </Dialog>
+                                            
+                    </div>
+
                 </SideNav.Nav>   
                              
         </SideNav>
