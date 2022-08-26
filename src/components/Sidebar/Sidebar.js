@@ -40,6 +40,9 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 export default function Navbar(){
 
+    const refLatitud = useRef(null);
+    const refLongitud = useRef(null);
+
     const refUsuario = useRef(null);
     const refClave = useRef(null);
 
@@ -64,6 +67,26 @@ export default function Navbar(){
         enviarData( URL_LOGIN, data);
         setOpenInicio(false);
         setOpenAñadir(true);
+    }
+
+    const handleAñadir=()=> {
+        const data_punto = {
+            "Longitud" : refLongitud.current.value,
+            "Latitud" : refLatitud.current.value
+        };
+        console.log(data_punto)
+
+        fetch('https://sheet.best/api/sheets/d7e4405d-c143-45c4-881b-157eec610464',{
+            method:'POST',
+            mode: 'cors',
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "Longitud": data_punto.Longitud,
+                "Latitud": data_punto.Latitud
+            })
+        });
     }
 
     const [openInicio, setOpenInicio] = React.useState(false);
@@ -268,44 +291,45 @@ export default function Navbar(){
 
         <div eventKey="Añadir">
                                             
-                                            <p onClick={handleClickOpenAñadir}> Volver</p>
-                                                <Dialog
-                                                    open={openAñadir}
-                                                    TransitionComponent={Transition}
-                                                    keepMounted
-                                                    onClose={handleCloseAñadir}
-                                                    aria-describedby="alert-dialog-slide-description"
-                                                >
-                                                    <DialogTitle className = "Titulo">{"Añadir punto"}</DialogTitle>
-                                                    <DialogContent>                                                       
-                                                        <input className='Longitud'
-                                                        autoFocus
-                                                        margin="dense"
-                                                        id="name"
-                                                        placeholder="Longitud"
-                                                        type="text"
-                                                        fullWidth
-                                                        variant="standard"
-                                                        />
-                                                        
-                                                        <input className='Latitud'
-                                                        autoFocus
-                                                        margin="dense"
-                                                        id="name"
-                                                        placeholder="Latitud"
-                                                        type="text"
-                                                        fullWidth
-                                                        variant="standard"
-                                                        />
-                                                    </DialogContent>
-                                                    <DialogActions>
-                                                    <Button onClick={handleCloseAñadir}>CANCELAR</Button>
-                                                    <Button onClick={handleCloseAñadir}>CONTINUAR</Button>
-                                                    </DialogActions>
-                                                </Dialog>      
-                                                      
+        <p onClick={handleClickOpenAñadir}> Volver</p>
+            <Dialog
+                open={openAñadir}
+                TransitionComponent={Transition}
+                keepMounted
+                onClose={handleCloseAñadir}
+                aria-describedby="alert-dialog-slide-description"
+            >
+                <DialogTitle className = "Titulo">{"Añadir punto"}</DialogTitle>
+                <DialogContent>                                                       
+                    <input className='Longitud'
+                    autoFocus
+                    margin="dense"
+                    id="name"
+                    placeholder="Longitud"
+                    type="text"
+                    fullWidth
+                    variant="standard"
+                    ref = {refLongitud}
+                    />
+                    
+                    <input className='Latitud'
+                    autoFocus
+                    margin="dense"
+                    id="name"
+                    placeholder="Latitud"
+                    type="text"
+                    fullWidth
+                    variant="standard"
+                    ref = {refLatitud}
+                    />
+                </DialogContent>
+                <DialogActions>
+                <Button onClick={handleCloseAñadir}>CANCELAR</Button>
+                <Button onClick={handleAñadir}>CONTINUAR</Button>
+                </DialogActions>
+            </Dialog>                                                     
                                                                 
-                                        </div>
+        </div>
 
     </>
     );
