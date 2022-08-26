@@ -39,3 +39,16 @@
         border-radius: 3px;
         display: none;
     }
+
+    .prueba{
+        background-color: orange;
+        color: #fff;
+        padding: 6px 12px;
+        font-family: monospace;
+        z-index: 1;
+        position: absolute;
+        top: 90%;
+        left: 90%;
+        margin: 12px;
+        border-radius: 4px;
+    }

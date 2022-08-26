@@ -41,6 +41,7 @@ return (
     <Sidebar/>
     <div ref={mapContainer} className="map-container" />      
     <div className="sidebar"> Longitude: {lng} | Latitude: {lat} | Zoom: {zoom} </div>
+    <button className='prueba'>marker</button>
   </>
   );
 }
