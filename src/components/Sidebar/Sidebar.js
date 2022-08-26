@@ -87,6 +87,7 @@ export default function Navbar(){
                 "Latitud": data_punto.Latitud
             })
         });
+        setOpenAñadir(false);
     }
 
     const [openInicio, setOpenInicio] = React.useState(false);
