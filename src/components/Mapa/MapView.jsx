@@ -13,6 +13,7 @@ export default function MapView() {
   const [lng, setLng] = useState(-58.4540 );
   const [lat, setLat] = useState(-34.5492);
   const [zoom, setZoom] = useState(11);
+
  
   useEffect(() => {
     if (map.current){ 
@@ -25,17 +26,12 @@ export default function MapView() {
       zoom: zoom
     });
     new mapboxgl.Marker({
-      color: "#FBB03B"
+      color: "#FBB03B",
+      draggable: true
       }).setLngLat([-58.44822623702601,-34.54009267476871 ])
       .addTo(map.current);
   });
-  
-  //console.log('Este es el map: ' + map.current)
-  /*geoJson.features.map((feature) =>
-  );*/
-// Create a new marker.
-
-
+    
 return (  
   <>
     <Sidebar/>
