@@ -31,8 +31,10 @@ export default function MapView() {
         draggable:true
         }).setLngLat([-58.44,-34.54])
         .addTo(map.current); */
-        var oneMarker= new mapboxgl.Marker(currentMarkers)
-  .setLngLat([-58.44,-34.54])
+        const oneMarker= new mapboxgl.Marker({currentMarkers,color: "#FBB03B",
+        draggable:true})
+        
+      .setLngLat([-58.44,-34.54])
       .addTo(map.current);
       currentMarkers.push(oneMarker);
       };
