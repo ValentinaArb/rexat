@@ -156,8 +156,8 @@ export default function Navbar(){
                                 aria-describedby="alert-dialog-slide-description"
                             >
                                 <DialogTitle className = "Titulo">{"INICIAR SESIÓN"}</DialogTitle>
-                                <DialogContent>
-                                   
+                                
+                                <DialogContent>                                
                                     <input className='login-input'
                                     autoFocus
                                     margin="dense"

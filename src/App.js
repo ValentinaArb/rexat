@@ -26,3 +26,5 @@ export default function App() {
 //npm install --save mapbox-gl
 // npm install aos --save
 //npm install --save react @trendmicro/react-sidenav
+// $ npm install @turf/turf
+// npm install @mapbox/mapbox-gl-draw

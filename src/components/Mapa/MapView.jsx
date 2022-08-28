@@ -3,18 +3,40 @@ import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-load
 import "./MapView.css"
 import Sidebar from "../Sidebar/Sidebar";
 //s import Draggable_Marker from '../Draggable_Marker/draggable_marker';
+import AddIcon from '@mui/icons-material/Add';
+import '@trendmicro/react-sidenav/dist/react-sidenav.css';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoidW1ncnUiLCJhIjoiY2w0bzd5aHc3MDR5ZzNkbGx5bzh0bWZ3YiJ9.1m8NjPzeitlkvyR7UsQzLQ';
 
-export default function MapView() {  
-
+export default function MapView() {
   const mapContainer = useRef(null);
   const map = useRef(null);
   const [lng, setLng] = useState(-58.4540 );
   const [lat, setLat] = useState(-34.5492);
   const [zoom, setZoom] = useState(11);
+      
+  const delete_point = () => {
+    /* new mapboxgl.Marker().remove(map.current); */
+    if (currentMarkers!==null) {
+      for (var i = currentMarkers.length - 1; i >= 0; i--) {
+        currentMarkers[i].remove();
+      }
+  }
+    };
 
- 
+    const add_point  = () => {  
+      /* const marker1 = new mapboxgl.Marker({
+        color: "#FBB03B",
+        draggable:true
+        }).setLngLat([-58.44,-34.54])
+        .addTo(map.current); */
+        var oneMarker= new mapboxgl.Marker(currentMarkers)
+  .setLngLat([-58.44,-34.54])
+      .addTo(map.current);
+      currentMarkers.push(oneMarker);
+      };
+
   useEffect(() => {
     if (map.current){ 
     return;
@@ -24,20 +46,28 @@ export default function MapView() {
       style: 'mapbox://styles/umgru/cl53gtdyf000614pmr05mcd1u',
       center: [lng, lat],
       zoom: zoom
-    });
-    new mapboxgl.Marker({
-      color: "#FBB03B",
-      draggable: true
-      }).setLngLat([-58.44822623702601,-34.54009267476871 ])
-      .addTo(map.current);
+    });    
   });
-    
+  
+  var currentMarkers=[];
+
+  // tmp marker
+  
+  
+  // save tmp marker into currentMarkers
+  
+  
+  
+  // remove markers 
+  
+
 return (  
   <>
     <Sidebar/>
     <div ref={mapContainer} className="map-container" />      
     <div className="sidebar"> Longitude: {lng} | Latitude: {lat} | Zoom: {zoom} </div>
-    <button className='prueba'>marker</button>
+    <button className='agregar' onClick={delete_point}><DeleteIcon/></button>
+    <button className='eliminar' onClick={add_point}><AddIcon/></button>
   </>
   );
 }

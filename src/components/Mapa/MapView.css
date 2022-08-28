@@ -40,7 +40,7 @@
         display: none;
     }
 
-    .prueba{
+    .agregar{
         background-color: orange;
         color: #fff;
         padding: 6px 12px;
@@ -49,6 +49,19 @@
         position: absolute;
         top: 90%;
         left: 90%;
+        margin: 12px;
+        border-radius: 4px;
+    }
+
+    .eliminar{
+        background-color: orange;
+        color: #fff;
+        padding: 6px 12px;
+        font-family: monospace;
+        z-index: 1;
+        position: absolute;
+        top: 90%;
+        left: 85%;
         margin: 12px;
         border-radius: 4px;
     }
