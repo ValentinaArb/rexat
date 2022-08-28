@@ -12,31 +12,23 @@ mapboxgl.accessToken = 'pk.eyJ1IjoidW1ncnUiLCJhIjoiY2w0bzd5aHc3MDR5ZzNkbGx5bzh0b
 export default function MapView() {
   const mapContainer = useRef(null);
   const map = useRef(null);
-  const [lng, setLng] = useState(-58.4540 );
-  const [lat, setLat] = useState(-34.5492);
-  const [zoom, setZoom] = useState(11);
+  const [lng] = useState(-58.4540 );
+  const [lat] = useState(-34.5492);
+  const [zoom] = useState(11);
       
   const delete_point = () => {
-    /* new mapboxgl.Marker().remove(map.current); */
     if (currentMarkers!==null) {
       for (var i = currentMarkers.length - 1; i >= 0; i--) {
         currentMarkers[i].remove();
       }
-  }
-    };
+    }
+  };
 
-    const add_point  = () => {  
-      /* const marker1 = new mapboxgl.Marker({
-        color: "#FBB03B",
-        draggable:true
-        }).setLngLat([-58.44,-34.54])
-        .addTo(map.current); */
-        const oneMarker= new mapboxgl.Marker({currentMarkers,color: "#FBB03B",
-        draggable:true})
-        
-      .setLngLat([-58.44,-34.54])
-      .addTo(map.current);
-      currentMarkers.push(oneMarker);
+  const add_point  = () => {
+      const oneMarker= new mapboxgl.Marker({currentMarkers,color: "#FBB03B", draggable:true})        
+        .setLngLat([-58.44,-34.54])
+        .addTo(map.current);
+        currentMarkers.push(oneMarker);
       };
 
   useEffect(() => {
@@ -52,17 +44,7 @@ export default function MapView() {
   });
   
   var currentMarkers=[];
-
-  // tmp marker
   
-  
-  // save tmp marker into currentMarkers
-  
-  
-  
-  // remove markers 
-  
-
 return (  
   <>
     <Sidebar/>

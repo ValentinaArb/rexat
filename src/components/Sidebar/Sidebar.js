@@ -161,9 +161,11 @@ export default function Navbar(){
                                     <input className='login-input'
                                     autoFocus
                                     margin="dense"
+                                    type="email"
+                                    label="Email" 
+                                    fieldName="Email" 
                                     id="name"
                                     placeholder="Email Address"
-                                    type="email"
                                     fullWidth
                                     variant="standard"
                                     ref={refUsuario}
@@ -279,7 +281,7 @@ export default function Navbar(){
 
                     <NavItem className="logo-Sidebar">
                         <NavIcon>
-                            <img className="logo" src= {logo} alt=" "></img>
+                            <div className= "centrar-icon"><img className="logo" src= {logo} alt=" "></img></div>
                         </NavIcon>
                         <NavText>
                             Rexat.proyecto@gmail.com
@@ -290,7 +292,7 @@ export default function Navbar(){
                              
         </SideNav>
 
-        <div eventKey="Añadir">
+     {/*    <div eventKey="Añadir">
                                             
         <p onClick={handleClickOpenAñadir}> Volver</p>
             <Dialog
@@ -330,7 +332,7 @@ export default function Navbar(){
                 </DialogActions>
             </Dialog>                                                     
                                                                 
-        </div>
+        </div> */}
 
     </>
     );
