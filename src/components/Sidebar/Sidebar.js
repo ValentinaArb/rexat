@@ -136,7 +136,6 @@ export default function Navbar(){
               setOpenAñadir(false);
             };
 
-
     return(
         <>
         <SideNav id="Sidebar">
