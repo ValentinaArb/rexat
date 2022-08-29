@@ -1,11 +1,11 @@
 import React, { useRef } from "react";
 import "./Sidebar.css";
-import SideNav, {NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
+import SideNav, {NavItem, NavIcon, NavText} from '@trendmicro/react-sidenav';
 import AddIcon from '@mui/icons-material/Add';
 import ImportContactsOutlinedIcon from '@mui/icons-material/ImportContactsOutlined';
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
-import '@trendmicro/react-sidenav/dist/react-sidenav.css';
+/* import '@trendmicro/react-sidenav/dist/react-sidenav.css'; */
 import logo from "../../img/logoRXT.png"
 import {Link} from "react-router-dom";
 import Button from '@mui/material/Button';
@@ -15,6 +15,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Slide from '@mui/material/Slide';
+import PersonIcon from '@mui/icons-material/Person';
 
 const URL_LOGIN = "http://localhost/ws-login/login.php"
 
@@ -39,10 +40,6 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   });
 
 export default function Navbar(){
-
-    const refLatitud = useRef(null);
-    const refLongitud = useRef(null);
-
     const refUsuario = useRef(null);
     const refClave = useRef(null);
 
@@ -66,29 +63,7 @@ export default function Navbar(){
         console.log(data);
         enviarData( URL_LOGIN, data);
         setOpenInicio(false);
-        setOpenAñadir(true);
-    }
-
-    const handleAñadir=()=> {
-        const data_punto = {
-            "Longitud" : refLongitud.current.value,
-            "Latitud" : refLatitud.current.value
-        };
-        console.log(data_punto)
-
-        fetch('https://sheet.best/api/sheets/d7e4405d-c143-45c4-881b-157eec610464',{
-            method:'POST',
-            mode: 'cors',
-            headers:{
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                "Longitud": data_punto.Longitud,
-                "Latitud": data_punto.Latitud
-            })
-        });
-        setOpenAñadir(false);
-    }
+    }  
 
     const [openInicio, setOpenInicio] = React.useState(false);
   
@@ -108,6 +83,15 @@ export default function Navbar(){
           const handleCloseTelefonos = () => {
             setOpenTelefonos(false);
           };
+
+    const [openContactanos, setOpenContactanos] = React.useState(false);
+        const handleClickOpenContactanos = () => {
+              setOpenContactanos(true);
+            };
+      
+            const handleCloseContactanos = () => {
+              setOpenContactanos(false);
+            };
     
     const [openPreguntas, setOpenPreguntas] = React.useState(false);
         const handleClickOpenPreguntas = () => {
@@ -125,15 +109,6 @@ export default function Navbar(){
       
             const handleCloseVolver = () => {
               setOpenVolver(false);
-            };
-            
-    const [openAñadir, setOpenAñadir] = React.useState(false);
-          const handleClickOpenAñadir = () => {
-              setOpenAñadir(true);
-            };
-      
-            const handleCloseAñadir = () => {
-              setOpenAñadir(false);
             };
 
     return(
@@ -215,6 +190,32 @@ export default function Navbar(){
                         </NavText>
                     </NavItem>
 
+                    <NavItem eventKey="contactanos">
+                        <NavIcon>
+                        <div className='centrar-icon' ><PersonIcon/></div>
+                            <i className="Sidebar-btn-contactanos" style={{ fontSize: '1.75em' }} />
+                        </NavIcon>
+                        <NavText>
+                        <p onClick={handleClickOpenContactanos}> Contactanos</p>
+                            <Dialog
+                                open={openContactanos}
+                                TransitionComponent={Transition}
+                                keepMounted
+                                onClose={handleCloseContactanos}
+                                aria-describedby="alert-dialog-slide-description"
+                            >
+                                <DialogContent>
+                                    <DialogContentText id="alert-dialog-description">
+                                        <p className="Contacto">Ante cualquier consulta, envianos al mail: <b>Rexat.proyecto@gmail.com </b></p>
+                                    </DialogContentText>
+                                </DialogContent>     
+                                <DialogActions>
+                                <Button onClick={handleCloseContactanos}>Ok</Button>
+                                </DialogActions>
+                            </Dialog>    
+                        </NavText>
+                    </NavItem>
+
                     <NavItem eventKey="Preguntas">
                         <NavIcon>
                         <div className='centrar-icon'> <HelpOutlineOutlinedIcon/> </div>
@@ -265,7 +266,7 @@ export default function Navbar(){
                                 onClose={handleCloseVolver}
                                 aria-describedby="alert-dialog-slide-description"
                             >
-                                <DialogTitle className = "Titulo">{"¿Esta seguro que quiere regresar al inicio ?"}</DialogTitle>
+                                <DialogTitle className = "Titulo">{"¿Está seguro que quiere regresar al inicio ?"}</DialogTitle>
                                 <DialogActions>
                                 
                                 <div className= "centrar"> 
@@ -278,61 +279,13 @@ export default function Navbar(){
            
                     </NavItem>        
 
-                    <NavItem className="logo-Sidebar">
+                   {/*  <NavItem className="logo-Sidebar">
                         <NavIcon>
-                            <div className= "centrar-icon"><img className="logo" src= {logo} alt=" "></img></div>
+                        <div className= "centrar"> <img className="logo-Sidebar" src= {logo} alt=" "></img></div>
                         </NavIcon>
-                        <NavText>
-                            Rexat.proyecto@gmail.com
-                        </NavText>
-                    </NavItem>
-
-                </SideNav.Nav>   
-                             
+                    </NavItem> */}
+                </SideNav.Nav>                                
         </SideNav>
-
-     {/*    <div eventKey="Añadir">
-                                            
-        <p onClick={handleClickOpenAñadir}> Volver</p>
-            <Dialog
-                open={openAñadir}
-                TransitionComponent={Transition}
-                keepMounted
-                onClose={handleCloseAñadir}
-                aria-describedby="alert-dialog-slide-description"
-            >
-                <DialogTitle className = "Titulo">{"Añadir punto"}</DialogTitle>
-                <DialogContent>                                                       
-                    <input className='Longitud'
-                    autoFocus
-                    margin="dense"
-                    id="name"
-                    placeholder="Longitud"
-                    type="text"
-                    fullWidth
-                    variant="standard"
-                    ref = {refLongitud}
-                    />
-                    
-                    <input className='Latitud'
-                    autoFocus
-                    margin="dense"
-                    id="name"
-                    placeholder="Latitud"
-                    type="text"
-                    fullWidth
-                    variant="standard"
-                    ref = {refLatitud}
-                    />
-                </DialogContent>
-                <DialogActions>
-                <Button onClick={handleCloseAñadir}>CANCELAR</Button>
-                <Button onClick={handleAñadir}>CONTINUAR</Button>
-                </DialogActions>
-            </Dialog>                                                     
-                                                                
-        </div> */}
-
     </>
     );
 }

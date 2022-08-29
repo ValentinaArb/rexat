@@ -17,22 +17,21 @@ export default function MapView() {
   const [zoom, setZoom] = useState(11);
       
   const delete_point = () => {
-    /* new mapboxgl.Marker().remove(map.current); */
     if (currentMarkers!==null) {
       for (var i = currentMarkers.length - 1; i >= 0; i--) {
         currentMarkers[i].remove();
       }
-  }
-    };
+    }
+  };
   
   const add_point  = () => {
     var html = '<div class="marker-popup"><button onClick={delete_point}>Tirar</button></div>';
 
     var popup = new mapboxgl.Popup(
         {
-           anchor: 'bottom',   // To show popup on top
-           offset: { 'bottom': [0, -10] },  // To prevent popup from over shadowing the marker.
-           OnClick: false   // To prevent close on mapClick.
+           anchor: 'bottom',
+           offset: { 'bottom': [0, -10] }, 
+           OnClick: false
         }
     ).setHTML(html); 
     
@@ -41,8 +40,7 @@ export default function MapView() {
         .setPopup(popup)
         .addTo(map.current);
   
-        currentMarkers.push(oneMarker);
-        
+        currentMarkers.push(oneMarker);        
   };
 
   useEffect(() => {    
@@ -53,8 +51,7 @@ export default function MapView() {
       container: mapContainer.current,
       style: 'mapbox://styles/umgru/cl53gtdyf000614pmr05mcd1u',
       center: [lng, lat],
-      zoom: zoom,
-      
+      zoom: zoom,      
     });
   });
 
@@ -67,15 +64,6 @@ export default function MapView() {
     });
   });
   
-  /* useEffect(() => {
-    if (!map.current) return;
-      map.current.on('move', () => {
-      setLng(map.current.getCenter().lng.toFixed(4));
-      setLat(map.current.getCenter().lat.toFixed(4));
-      setZoom(map.current.getZoom().toFixed(2));
-    });
-  }); */
-
   var currentMarkers=[];
   
 return (
@@ -83,8 +71,8 @@ return (
     <Sidebar/>
     <div ref={mapContainer} className="map-container" />      
     <div className="sidebar"> Longitude: {lng} | Latitude: {lat} | Zoom: {zoom} </div>
-    <button className='agregar' onClick={delete_point}><DeleteIcon/></button>
-    <button className='eliminar' onClick={add_point}><AddIcon/></button>
+    <button title= "Eliminar" className='eliminar' onClick={delete_point}><DeleteIcon/></button>
+    <button title= "Agregar" className='agregar' onClick={add_point}><AddIcon/></button>
   </>
   );
 }
