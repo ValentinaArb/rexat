@@ -6,7 +6,6 @@ import ImportContactsOutlinedIcon from '@mui/icons-material/ImportContactsOutlin
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 /* import '@trendmicro/react-sidenav/dist/react-sidenav.css'; */
-import logo from "../../img/logoRXT.png"
 import {Link} from "react-router-dom";
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
