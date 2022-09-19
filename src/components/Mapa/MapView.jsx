@@ -61,7 +61,7 @@ export default function MapView() {
 
   const add_point  = () => {
     setOpenPunto(false);
-    var html = '<div class="marker-popup"><button onClick={delete_point}>Tirar</button></div>';
+    var html = {refTitulo};
 
     var popup = new mapboxgl.Popup(
         {
@@ -69,7 +69,8 @@ export default function MapView() {
            offset: { 'bottom': [0, -10] }, 
            OnClick: false
         }
-    ).setHTML(html); 
+
+    ).setHTML(html.value); 
     
       const oneMarker= new mapboxgl.Marker({currentMarkers,color: "#FBB03B", draggable:true})        
         .setLngLat([-58.44,-34.54])
