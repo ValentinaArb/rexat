@@ -1,0 +1,12 @@
+use('Rexat')
+
+/* >MongoDB Create MongoDB Playground */
+
+db.prueba.insert({
+  Id_Usuario: 1,
+  nombre_usuario : "valen",
+  correo: "valen.arbarello@gmail.com",
+  contraseña: "valentina123"
+})
+
+db.prueba.find({})

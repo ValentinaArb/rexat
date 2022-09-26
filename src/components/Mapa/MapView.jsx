@@ -60,7 +60,7 @@ export default function MapView() {
   const refDescripcion = useRef(null);
 
   const add_point  = () => {
-    setOpenPunto(false);
+    setOpenPunto(false);  
     var html = {refTitulo};
 
     var popup = new mapboxgl.Popup(
@@ -167,8 +167,7 @@ return (
       <Button onClick={handleClosePunto}>Cancelar</Button>
       <Button onClick={add_point}>Ok</Button>
       </DialogActions>
-    </Dialog>   
-
+    </Dialog>
   </>
   );
 }
