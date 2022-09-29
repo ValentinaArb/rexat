@@ -1,7 +1,7 @@
 use('Rexat')
 
 db.prueba.deleteMany({
-  correo: "valen.arbarello@gmail.com"
+  usuario: "valen"
 })
 
 db.prueba.find({})

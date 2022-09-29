@@ -2,7 +2,7 @@ use('Rexat')
 
 /* >MongoDB Create MongoDB Playground */
 
-db.prueba.insert({
+db.prueba.insertOne({
   Id_punto: 1,
   usuario: "valen",
   latitud: -34.54893673149533,
