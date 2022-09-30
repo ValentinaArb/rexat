@@ -37,15 +37,15 @@ export default function Main() {
       </div>
 
       <div data-aos="fade-up" data-aos-duration="1000" id='Parte2'>
-      <div className= "centrar_frase_main">
-      <img className='sparks' data-aos="fade-up" data-aos-duration="1200" src= {sparks_left} alt=" "/>
-          <h2 className='frase_main' data-aos="fade-up" data-aos-duration="1200"> Cuidemos nuestro planeta </h2>
-      <img className='sparks' data-aos="fade-up" data-aos-duration="1200" src= {sparks_right} alt=" "/>
-      </div>
-          <h3 className='frase' data-aos="fade-up" data-aos-duration="1200"> <b>Mantengamos las costas limpias, protejamos nuestro hogar. </b> </h3> <br></br>
-          <h4 className='frase' data-aos="fade-up" data-aos-duration="1200">Actualmente se generan 1,4 billones de toneladas de Residuos Sólidos Urbanos en todo el mundo por año. </h4>
-          <h4 className='frase' data-aos="fade-up" data-aos-duration="1200"> Y solo en Argentina  45 millones de toneladas diarias, siendo uno de los principales factores del calentamiento global. </h4>
-          <h4 className='frase' data-aos="fade-up" data-aos-duration="1200">  <br></br>Estos contaminantes dañan la vida y la ecología marina, la salud humana y el turismo costero.</h4> 
+        <div className= "centrar_frase_main">
+          <img className='sparks' data-aos="fade-up" data-aos-duration="1200" src= {sparks_left} alt=" "/>
+            <h2 className='frase_main' data-aos="fade-up" data-aos-duration="1200"> Cuidemos nuestro planeta </h2>
+          <img className='sparks' data-aos="fade-up" data-aos-duration="1200" src= {sparks_right} alt=" "/>
+        </div>
+        <h3 className='frase' data-aos="fade-up" data-aos-duration="1200"> <b>Mantengamos las costas limpias, protejamos nuestro hogar. </b> </h3> <br></br>
+        <h4 className='frase' data-aos="fade-up" data-aos-duration="1200">Actualmente se generan 1,4 billones de toneladas de Residuos Sólidos Urbanos en todo el mundo por año. </h4>
+        <h4 className='frase' data-aos="fade-up" data-aos-duration="1200"> Y solo en Argentina  45 millones de toneladas diarias, siendo uno de los principales factores del calentamiento global. </h4>
+        <h4 className='frase' data-aos="fade-up" data-aos-duration="1200">  <br></br>Estos contaminantes dañan la vida y la ecología marina, la salud humana y el turismo costero.</h4> 
 
         <div data-aos="fade-up" data-aos-duration="1000" className= "centrar"><img className='Planeta_Lupa' src= {Planeta_Lupa} alt=" "/></div>
         
