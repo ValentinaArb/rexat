@@ -12,6 +12,7 @@
 .Text{
     display: inline-block;
     margin:60px;
+    font-size: 70px;
 }
 .Hola{
     font-family: 'Alkalami', serif;}
@@ -101,7 +102,7 @@
     display: inline; 
 }
 .basura{
-    margin: 8rem 15rem;
+    margin: 0rem 10rem;
     height: 350px;
 }
 .leaflet-container{

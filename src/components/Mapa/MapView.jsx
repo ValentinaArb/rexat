@@ -130,8 +130,8 @@ return (
     <div className="sidebar"> Longitude: {lng} | Latitude: {lat} | Zoom: {zoom} </div>
     <button title= "Eliminar" className='eliminar' onClick={delete_point}><DeleteIcon/></button>
 
-  {/* <button title= "Agregar" className='agregar' onClick={add_point}><AddIcon/></button>*/}    
-      <button title= "Agregar" className='agregar' onClick={handleClickOpenPunto}><AddIcon/></button>
+{/*   <button title= "Agregar" className='agregar' onClick={add_point}><AddIcon/></button>    
+ */}      <button title= "Agregar" className='agregar' onClick={handleClickOpenPunto}><AddIcon/></button>
 
     <Dialog
         open={openPunto}
