@@ -39,7 +39,10 @@ export default function MapView() {
   const [lng, setLng] = useState(-58.4540 );
   const [lat, setLat] = useState(-34.5492);
   const [zoom, setZoom] = useState(11);
-  
+   
+  const refTitulo = useRef(null);
+  const refDescripcion = useRef(null);
+
   const handleClosePunto = () => {
     setOpenPunto(false);
   };
@@ -56,26 +59,24 @@ export default function MapView() {
       }
     }
   };
-  const refTitulo = useRef(null);
-  const refDescripcion = useRef(null);
 
   const add_point  = () => {
-    setOpenPunto(false);  
-    var html = {refTitulo};
+    setOpenPunto(false);
+    /*var html = {refTitulo};
 
-    var popup = new mapboxgl.Popup(
+     var popup = new mapboxgl.Popup(
         {
            anchor: 'bottom',
            offset: { 'bottom': [0, -10] }, 
            OnClick: false
         }
 
-    ).setHTML(html.value); 
+    ).setHTML(html.value);  */
     
       const oneMarker= new mapboxgl.Marker({currentMarkers,color: "#FBB03B", draggable:true})        
         .setLngLat([-58.44,-34.54])
-        .setPopup(popup)
-        .addTo(map.current);
+        .setPopup(new mapboxgl.Popup().setHTML(/* {refTitulo} */ "Titulo, descripción"))
+        .addTo(map.current)
   
         currentMarkers.push(oneMarker);
 
@@ -128,9 +129,9 @@ return (
     <div ref={mapContainer} className="map-container" />      
     <div className="sidebar"> Longitude: {lng} | Latitude: {lat} | Zoom: {zoom} </div>
     <button title= "Eliminar" className='eliminar' onClick={delete_point}><DeleteIcon/></button>
-      {/* <button title= "Agregar" className='agregar' onClick={add_point}><AddIcon/></button> */}
 
-    <button title= "Agregar" className='agregar' onClick={handleClickOpenPunto}><AddIcon/></button>
+  {/* <button title= "Agregar" className='agregar' onClick={add_point}><AddIcon/></button>*/}    
+      <button title= "Agregar" className='agregar' onClick={handleClickOpenPunto}><AddIcon/></button>
 
     <Dialog
         open={openPunto}

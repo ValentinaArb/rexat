@@ -117,7 +117,7 @@ export default function Navbar(){
                 <SideNav.Nav>
                     <NavItem eventKey="añadir-punto">
                         <NavIcon>
-                        <div className='centrar-icon' >  <AddIcon/> </div>
+                        <div id='centrar-icon' >  <AddIcon/> </div>
                         </NavIcon>
                         <NavText eventKey="ingresar">
                         <p onClick={handleClickOpenInicio}>Ingresar</p> 
@@ -162,7 +162,7 @@ export default function Navbar(){
                     </NavItem>
                     <NavItem eventKey="telefonos">
                         <NavIcon>
-                        <div className='centrar-icon' ><ImportContactsOutlinedIcon/></div>
+                        <div id='centrar-icon' ><ImportContactsOutlinedIcon/></div>
                             <i className="Sidebar-btn-contactanos" style={{ fontSize: '1.75em' }} />
                         </NavIcon>
                         <NavText>
@@ -191,7 +191,7 @@ export default function Navbar(){
 
                     <NavItem eventKey="contactanos">
                         <NavIcon>
-                        <div className='centrar-icon' ><PersonIcon/></div>
+                        <div id='centrar-icon' ><PersonIcon/></div>
                             <i className="Sidebar-btn-contactanos" style={{ fontSize: '1.75em' }} />
                         </NavIcon>
                         <NavText>
@@ -217,7 +217,7 @@ export default function Navbar(){
 
                     <NavItem eventKey="Preguntas">
                         <NavIcon>
-                        <div className='centrar-icon'> <HelpOutlineOutlinedIcon/> </div>
+                        <div id='centrar-icon'> <HelpOutlineOutlinedIcon/> </div>
                             <i className="Sidebar-btn" style={{ fontSize: '1.75em' }} />
                         </NavIcon>
                         <NavText>
@@ -253,7 +253,7 @@ export default function Navbar(){
                      <NavItem eventKey="Volver">
                     
                         <NavIcon>
-                        <div className='centrar-icon'><HomeOutlinedIcon/></div>
+                        <div id='centrar-icon'><HomeOutlinedIcon/></div>
                                 <i className="Sidebar-btn-volver" style={{ fontSize: '1.75em' }} />                       
                         </NavIcon>
                         <NavText>

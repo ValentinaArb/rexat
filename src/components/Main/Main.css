@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkalami&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight&display=swap');
 
 .Inicio{
     background-color: #FAF8D4;
@@ -11,16 +13,41 @@
     display: inline-block;
     margin:60px;
 }
+.Hola{
+    font-family: 'Alkalami', serif;}
 .BtnMapa{    
    font-size: 20px;
    padding: 0.5rem;
    margin-top:3%;
+   background-color: #297740;
+   padding: 2% 10% 3% 10%;
+   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+
+   border-color: transparent;
+   border-radius: 10px;
+   color: white;
 }
 #Parte2{
     padding: 3rem;
 }
 .frase{
     justify-content: center; display: flex;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 25px;
+}
+.frase_main{
+    font-family: 'Alkalami';
+    font-size: 35px;
+}
+.centrar_frase_main{
+    display: flex; justify-content: center; align-items: center;
+}
+.sparks{
+    display: inline-flex; padding: 1%;
+}
+.Planeta_Lupa{
+    height: 10rem;
+    margin: 4%;
 }
 .Grid2{
     display: grid;
@@ -30,6 +57,7 @@
     grid-gap: 150px;
 }
 .Grid1{
+    font-size: 25px;
     display: grid;
     align-items: center;  justify-content: center;
     grid-template-columns: 50% 50%;
@@ -43,16 +71,18 @@
 }
 
 .titulo{
-    display: flex; align-items: center;  justify-content: center;
-    text-decoration: underline;
+    display: flex; justify-content: center;
+    font-family: 'Alkalami';
+    font-size: 45px;
 }
-.linkedin_info{
-    display: block;
-    height:30px;
+.Acceder_mapa{
+    margin-bottom: 2cm;
+    font-family: 'Alkalami';
+    font-size: 45px;
 }
 .footer{
     padding: 15px;
-    background-color: #3A5A40;
+    background-color: #458545;
     display: flex;  align-items: center;  justify-content: center;
     color: white;
 }
@@ -67,11 +97,12 @@
     margin-right: 15rem;
 }
 .planeta{
-    margin: 4cm;
+    margin: 0 0 2cm 1cm;
     display: inline; 
 }
 .basura{
-    margin: 8rem;
+    margin: 8rem 15rem;
+    height: 350px;
 }
 .leaflet-container{
     width: 100vw;
@@ -84,9 +115,21 @@
 .centrar{
     display: flex; justify-content: center;
 }
+.click{
+    display: flex; justify-content:center; align-items:flex-start;
+}
 .rol{
     display: block;
     padding-right: 10px;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 20px;
+}
+.linkedin_info{
+    display: block;
+    height:30px;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
 }
 .input{
     padding: 2%;
