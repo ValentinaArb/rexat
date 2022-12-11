@@ -1,7 +1,0 @@
-use('Rexat')
-
-db.prueba.deleteMany({
-  usuario: "valen"
-})
-
-db.prueba.find({})
