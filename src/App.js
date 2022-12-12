@@ -29,14 +29,3 @@ export default function App() {
 // $ npm install @turf/turf
 // npm install @mapbox/mapbox-gl-draw
 //npm i react-hook-form
-
-//npm i webpack -D
-//npm i nodemon -D
-//npm mongo o algo asi
-//npm i webpack-cli -D
-
-//npm install react react-dom
-
-//npm install babel-core babel-loader babel-preset-react babel-preset-env -D
-
-//npm run dev
