@@ -1,0 +1,16 @@
+use('Rexat')
+
+/* >MongoDB Create MongoDB Playground */
+<input id= "nombre">Ingresar nombre</input>
+prueba = "";
+
+if (nombre != nombre_usuario){
+  db.prueba.insertOne({
+  Id_Usuario: 1,
+  nombre_usuario : nombre,
+  correo: "valen.arbarello@gmail.com",
+  contraseña: "valentina123"
+})
+}
+
+db.prueba.find({})
