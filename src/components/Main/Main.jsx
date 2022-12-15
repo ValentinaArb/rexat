@@ -2,6 +2,7 @@ import React from 'react';
 import "./Main.css";
 import Aos from "aos";
 import "aos/dist/aos.css";
+
 import basura from "../../img/basura.png";
 import basura_satelital from "../../img/basura_satelital.png";
 import linkedin from "../../img/linkedin.png";
@@ -123,4 +124,3 @@ export default function Main() {
     </>    
   );
 }
-//nakjsfnajkf
